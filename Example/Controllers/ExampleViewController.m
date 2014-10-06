@@ -151,14 +151,14 @@ typedef NS_ENUM(NSUInteger, ExampleCircleSelector) {
 - (void)circleSelector:(NOCircleSelector *)circleSelector updatedDot:(NOCircleDot *)dot {
     if (circleSelector.tag == ExampleCircleSelectorBig) {
         if (dot.tag == ExampleCircleDotValue) {
-            NSString *text = [NSString stringWithFormat:@"%d", [self valueForAngle:dot.angle maxAngle:bigMaxAngle maxValue:500.f]];
+            NSString *text = [NSString stringWithFormat:@"%ld", (long)[self valueForAngle:dot.angle maxAngle:bigMaxAngle maxValue:500.f]];
             [dot.textLabel setText:text];
             [_aView.valueLabel setText:text];
         } else if (dot.tag == ExampleCircleDotEnd) {
             [dot.textLabel setText:NSLocalizedString(@"MAX", nil)];
         }
     } else {
-        NSString *text = [NSString stringWithFormat:@"%d", [self valueForAngle:dot.angle maxAngle:smallMaxAngle maxValue:10.f]];
+        NSString *text = [NSString stringWithFormat:@"%ld", (long)[self valueForAngle:dot.angle maxAngle:smallMaxAngle maxValue:10.f]];
         [dot.textLabel setText:text];
         [_aView.valueLabel setText:text];
         
@@ -176,7 +176,7 @@ typedef NS_ENUM(NSUInteger, ExampleCircleSelector) {
 
 - (void)circleSelector:(NOCircleSelector *)circleSelector beganUpdatingDotPosition:(NOCircleDot *)dot {
     [_aView.valueLabel setHidden:NO];
-    [_aView.valueLabel setText:[NSString stringWithFormat:@"%d", circleSelector.tag == ExampleCircleSelectorBig ? [self valueForAngle:dot.angle maxAngle:bigMaxAngle maxValue:500.f] : [self valueForAngle:dot.angle maxAngle:smallMaxAngle maxValue:10.f]]];
+    [_aView.valueLabel setText:[NSString stringWithFormat:@"%ld", (long)(circleSelector.tag == ExampleCircleSelectorBig ? [self valueForAngle:dot.angle maxAngle:bigMaxAngle maxValue:500.f] : [self valueForAngle:dot.angle maxAngle:smallMaxAngle maxValue:10.f])]];
 }
 
 - (void)circleSelector:(NOCircleSelector *)circleSelector endedUpdatingDotPosition:(NOCircleDot *)dot {

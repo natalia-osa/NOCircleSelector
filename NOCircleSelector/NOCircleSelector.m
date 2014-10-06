@@ -17,15 +17,6 @@
 
 @end
 
-// KNOWN ISSUES
-// bug with jumping between minAngle<->maxAngle (they're sometimes jumping to maxVal from nearby to minVal)
-// bug with multiple selectors 'stealing' a touch
-// should start from iOS 5 (test it)
-// TODO: BEFORE SUBMISSION
-// better example
-// description && screenshots
-// cocoapods (update podspec)
-// cocoacontrols
 @implementation NOCircleSelector
 
 #pragma mark - Memory management
@@ -173,7 +164,6 @@
     _circleSelectorRect = CGRectMake(CGRectGetMidX(frame) - sideLength, CGRectGetMidY(frame) - sideLength, sideLength * 2, sideLength * 2);
     
     [self setNeedsLayout];
-    
     [self drawCircle];
 }
 
@@ -222,24 +212,38 @@
 
 #pragma mark - Handling touches
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    CGPoint touchLocation = [[[event allTouches] anyObject] locationInView:self];
-    NSLog(@"BEGAN: %@", NSStringFromCGPoint(touchLocation));
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    UIView *hitView = [super hitTest:point withEvent:event];
     
-    for (NOCircleDot *dot in _dots) {
-        // don't handle dots which are disabled to move
-        if (!dot.userInteractionEnabled) {
-            continue;
-        }
-        // make sure the dot is nearby
-        if (ABS(touchLocation.x - dot.center.x) < _dotRadius && ABS(touchLocation.y - dot.center.y) < _dotRadius) {
-            _tappedCircleDot = dot;
-            NSLog(@"BEGAN WITH DOT");
-            
-            if ([_delegate respondsToSelector:@selector(circleSelector:beganUpdatingDotPosition:)]) {
-                [_delegate circleSelector:self beganUpdatingDotPosition:dot];
+    // after dot selection continue with our view
+    if (_tappedCircleDot) {
+        return hitView;
+    }
+    
+    // if touchesBegan in our view
+    if (!_tappedCircleDot) {// && hitView == self) {
+        for (NOCircleDot *dot in _dots) {
+            // don't handle dots which are disabled to move
+            if (!dot.userInteractionEnabled) {
+                continue;
             }
-            break;
+            // make sure the dot is nearby
+            if (ABS(point.x - dot.center.x) < _dotRadius && ABS(point.y - dot.center.y) < _dotRadius) {
+                _tappedCircleDot = dot;
+                
+                return hitView;
+            }
+        }
+    }
+    
+    // if not handled then we didn't select real dot
+    return nil;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (_tappedCircleDot) {
+        if ([_delegate respondsToSelector:@selector(circleSelector:beganUpdatingDotPosition:)]) {
+            [_delegate circleSelector:self beganUpdatingDotPosition:_tappedCircleDot];
         }
     }
 }
@@ -247,7 +251,6 @@
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     if (_tappedCircleDot) {
         CGPoint touchLocation = [[[event allTouches] anyObject] locationInView:self];
-        NSLog(@"MOVED: %@", NSStringFromCGPoint(touchLocation));
         [self placeDot:_tappedCircleDot nearPoint:touchLocation];
     }
 }
@@ -255,25 +258,20 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     if (_tappedCircleDot) {
         CGPoint touchLocation = [[[event allTouches] anyObject] locationInView:self];
-        NSLog(@"ENDED: %@", NSStringFromCGPoint(touchLocation));
         [self placeDot:_tappedCircleDot nearPoint:touchLocation];
         
         if ([_delegate respondsToSelector:@selector(circleSelector:endedUpdatingDotPosition:)]) {
             [_delegate circleSelector:self endedUpdatingDotPosition:_tappedCircleDot];
         }
-        
         _tappedCircleDot = nil;
     }
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
-    NSLog(@"CANCEL?");
     if (_tappedCircleDot) {
-        NSLog(@"YES!");
         if ([_delegate respondsToSelector:@selector(circleSelector:endedUpdatingDotPosition:)]) {
             [_delegate circleSelector:self endedUpdatingDotPosition:_tappedCircleDot];
         }
-        
         _tappedCircleDot = nil;
     }
 }
@@ -323,7 +321,6 @@
 
 - (void)updateDotPosition:(NOCircleDot *)dot {
     CGRect frame = [self dotRectWithAngle:dot.angle];
-    NSLog(@"POSITIONED: %@", NSStringFromCGRect(frame));
     [dot setFrame:frame];
 }
 
