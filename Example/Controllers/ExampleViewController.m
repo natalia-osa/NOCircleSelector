@@ -69,52 +69,53 @@ typedef NS_ENUM(NSUInteger, ExampleCircleSelector) {
     if (circleSelector.tag == ExampleCircleSelectorBig) {
         NOCircleDot *dot1 = [dots objectAtIndex:0];
         [dot1 setTag:ExampleCircleDotStart];
-        [dot1 setBackgroundColor:[UIColor clearColor]];
+        [dot1 setLineColor:[UIColor redColor]];
         [dot1 setUserInteractionEnabled:NO];
         [dot1 setAngle:bigMinAngle];
+        [dot1.textLabel setFont:[UIFont systemFontOfSize:10.f]];
         
         NOCircleDot *dot2 = [dots objectAtIndex:1];
         [dot2 setTag:ExampleCircleDotValue];
-        [dot2 setBackgroundColor:[UIColor clearColor]];
+        [dot2 setLineColor:[UIColor redColor]];
         [dot2 setAngle:45.f];
         [dot2 setMinAngle:bigMinAngle];
         [dot2 setMaxAngle:bigMaxAngle];
+        [dot2.textLabel setTextColor:[UIColor redColor]];
         
         NOCircleDot *dot3 = [dots objectAtIndex:2];
         [dot3 setTag:ExampleCircleDotEnd];
-        [dot3 setBackgroundColor:[UIColor clearColor]];
+        [dot3 setLineColor:[UIColor redColor]];
         [dot3 setUserInteractionEnabled:NO];
         [dot3 setAngle:bigMaxAngle];
         [dot3.textLabel setFont:[UIFont systemFontOfSize:10.f]];
+        [dot3.imageView setImage:[UIImage imageNamed:@"girl"]];
         
         // set the order of dots
         [circleSelector bringSubviewToFront:dot2];
     } else {
         NOCircleDot *dot1 = [dots objectAtIndex:0];
         [dot1 setTag:ExampleCircleDotStart];
-        [dot1 setBackgroundColor:[UIColor clearColor]];
-        [dot1 setFillColor:[UIColor redColor]];
+        [dot1 setFillColor:[UIColor lightGrayColor]];
+        [dot1 setLineColor:[UIColor darkGrayColor]];
         [dot1 setUserInteractionEnabled:NO];
         [dot1 setAngle:bigMinAngle];
         
         NOCircleDot *dot2 = [dots objectAtIndex:1];
         [dot2 setTag:ExampleCircleDotValue];
-        [dot2 setBackgroundColor:[UIColor clearColor]];
         [dot2 setFillColor:[UIColor redColor]];
         [dot2 setAngle:90.f];
         [dot2 setMinAngle:bigMinAngle];
         
         NOCircleDot *dot3 = [dots objectAtIndex:2];
         [dot3 setTag:ExampleCircleDotValue2];
-        [dot3 setBackgroundColor:[UIColor clearColor]];
         [dot3 setFillColor:[UIColor redColor]];
         [dot3 setAngle:210.f];
         [dot3 setMaxAngle:smallMaxAngle];
         
         NOCircleDot *dot4 = [dots objectAtIndex:3];
         [dot4 setTag:ExampleCircleDotEnd];
-        [dot4 setBackgroundColor:[UIColor clearColor]];
-        [dot4 setFillColor:[UIColor redColor]];
+        [dot4 setFillColor:[UIColor lightGrayColor]];
+        [dot4 setLineColor:[UIColor darkGrayColor]];
         [dot4 setUserInteractionEnabled:NO];
         [dot4 setAngle:smallMaxAngle];
         
@@ -128,8 +129,7 @@ typedef NS_ENUM(NSUInteger, ExampleCircleSelector) {
     if (circleSelector.tag == ExampleCircleSelectorBig) {
         for (NOCircleDotConnection *dotConnection in dotConnections) {
             if ([dotConnection dotConnectionBeetweenTag1:ExampleCircleDotStart tag2:ExampleCircleDotValue]) {
-                [dotConnection setConnectionColor:[UIColor blueColor]];
-                [dotConnection setLineWidth:2.f];
+                [dotConnection setLineWidth:5.f];
             } else if ([dotConnection dotConnectionBeetweenTag1:ExampleCircleDotStart tag2:ExampleCircleDotEnd]) {
                 [dotConnection setConnectionColor:[UIColor clearColor]];
             } // rest is standard
@@ -142,7 +142,7 @@ typedef NS_ENUM(NSUInteger, ExampleCircleSelector) {
             } else if ([dotConnection dotConnectionBeetweenTag1:ExampleCircleDotStart tag2:ExampleCircleDotEnd]) {
                 [dotConnection setConnectionColor:[UIColor clearColor]];
             } else {
-                [dotConnection setConnectionColor:[UIColor blueColor]];
+                [dotConnection setConnectionColor:[UIColor darkGrayColor]];
             }
         }
     }
@@ -154,8 +154,10 @@ typedef NS_ENUM(NSUInteger, ExampleCircleSelector) {
             NSString *text = [NSString stringWithFormat:@"%ld", (long)[self valueForAngle:dot.angle maxAngle:bigMaxAngle maxValue:500.f]];
             [dot.textLabel setText:text];
             [_aView.valueLabel setText:text];
-        } else if (dot.tag == ExampleCircleDotEnd) {
-            [dot.textLabel setText:NSLocalizedString(@"MAX", nil)];
+//        } else if (dot.tag == ExampleCircleDotEnd) {
+//            [dot.textLabel setText:NSLocalizedString(@"MAX", nil)];
+//        } else if (dot.tag == ExampleCircleDotStart) {
+//            [dot.textLabel setText:NSLocalizedString(@"MIN", nil)];
         }
     } else {
         NSString *text = [NSString stringWithFormat:@"%ld", (long)[self valueForAngle:dot.angle maxAngle:smallMaxAngle maxValue:10.f]];

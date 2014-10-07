@@ -59,6 +59,7 @@
     NSMutableArray *mDots = [NSMutableArray new];
     for (NSInteger i = 0; i < numberOfDots; i++) {
         NOCircleDot *dot = [[NOCircleDot alloc] init];
+        [dot setBackgroundColor:[self backgroundColor]];
         [mDots addObject:dot];
     }
     
@@ -283,21 +284,23 @@
     CGFloat deltaY = middleCirclePoint.y - point.y;
     CGFloat deltaX = middleCirclePoint.x - point.x;
     CGFloat angleInDegrees = [self normalizeAngle:(atan2f(deltaY, deltaX) * 180 / M_PI - 90)];
-    
     int minAngle = intValue(dot.minAngle), maxAngle = intValue(dot.maxAngle), angle = intValue(dot.angle), newAngle = intValue(angleInDegrees);
     
     // don't allow to pass min / max values
-    BOOL shouldConsiderMinAngle = minAngle != 0;
-    BOOL newAngleBypassedMinAngle = newAngle < minAngle;
-    BOOL oldAngleIsExtreme = (newAngle != maxAngle || newAngle != minAngle);
-    if (shouldConsiderMinAngle && newAngleBypassedMinAngle && oldAngleIsExtreme) {
-        angleInDegrees = dot.minAngle;
+    BOOL isInForbiddenRange = (newAngle > maxAngle) || (newAngle < minAngle);
+    if (isInForbiddenRange) {
+        // set to closest location or ignore if equal
+        int differenceToMax = [self normalizeAngle:(newAngle - maxAngle)];
+        int differenceToMin = [self normalizeAngle:(minAngle - newAngle)];
+        if (differenceToMax == differenceToMin) {
+            return;
+        } else if (differenceToMax < differenceToMin) {
+            angleInDegrees = dot.maxAngle;
+        } else {
+            angleInDegrees = dot.minAngle;
+        }
     }
-    BOOL shouldConsiderMaxAngle = maxAngle != 360;
-    BOOL newAngleBypassedMaxAngle = newAngle > maxAngle;
-    if (shouldConsiderMaxAngle && newAngleBypassedMaxAngle && oldAngleIsExtreme) {
-        angleInDegrees = dot.maxAngle;
-    }
+    
     // don't allow to cycle
     if ((angle == minAngle || angle == maxAngle) && (newAngle < minAngle || newAngle > maxAngle)) {
         return;

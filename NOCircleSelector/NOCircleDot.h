@@ -34,6 +34,11 @@
 @property (nonatomic, readonly) UILabel *textLabel;
 
 /**
+ *  Image shown in middle of circle. By default no image.
+ */
+@property (nonatomic, readonly) UIImageView *imageView;
+
+/**
  *  Defines in angle in degrees. Default 0.
  */
 @property (nonatomic) CGFloat angle;

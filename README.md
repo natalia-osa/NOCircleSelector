@@ -1,5 +1,3 @@
-#WARNING: Not finished yet, version 0.2 will be published to CocoaPods. Contains a few known bugs, which will be fixed during nearest week. Please take a look into NOCircleSelector.m for further details. Version 0.2 will support iOS5+.
-
 <p align="center" ><img src="https://raw.github.com/natalia-osa/NOCircleSelector/master/ReadmeImages/Demo.gif" alt="NOCircleSelector" title="NOCircleSelector" height="240"></p>
 
 Circle shaped control to select given number of values.
@@ -7,7 +5,7 @@ Circle shaped control to select given number of values.
 ## Structure:
 There are three kinds of objects: 
 - NOCircleSelector, which is an UIView and represents the whole area where the control is drawn. MIN(selector.width, selector.height) / 2 is the radius of selector.
-- NOCircleDot, which is an UIView and represents the single dot. The size and all properties can be changed via properties. Don't forget about normal UIView properties. The control is easy to subclass and you can add here eg an image. To access it use delegate methods or dots array of NOCircleSelector.
+- NOCircleDot, which is an UIView and represents the single dot. The size and all properties can be changed via properties. Don't forget about normal UIView properties. The control is easy to subclass so you can easily add custom views. To access it use delegate methods or dots array of NOCircleSelector.
 - NOCircleDotConnection - a model class, representing the line between two NOCircleDot. You can customise it via properties. To access it use delegate methods or dotConnections array of NOCircleSelector.
 The recommended method to differ the dot is to use NS_ENUM and set tags of these.
 
@@ -51,6 +49,10 @@ In NOCircleDot (+ all UIView properties like backgroundColor etc):
 ```objective-c
 [dot.textLabel setText@"Hello!"];
 ```
+- imageView
+```objective-c
+[dot.imageView setImage:[UIImage imageNamed:@"girl"]];
+```
 - angle - degrees, represents current angle of dot in selector
 ```objective-c
 [dot setAngle:90.f];
@@ -84,7 +86,7 @@ In NOCircleDotConnection:
 #### Installation with CocoaPods
 [CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries.
 ```ruby
-pod "NOCircleSelector", "~> 0.1"
+pod "NOCircleSelector", "~> 0.2"
 ```
 #### Submodule
 In your projects git folder type:
@@ -126,9 +128,9 @@ _circleSelector = [[NOCircleSelector alloc] initWithFrame:frame];
 // and handle whichever delegate you need
 - (void)circleSelector:(NOCircleSelector *)circleSelector changedDots:(NSArray *)dots {
     NOCircleDot *dot1 = [dots objectAtIndex:0];
-    [dot1 setBackgroundColor:[UIColor clearColor]];
     [dot1 setUserInteractionEnabled:NO];
     [dot1 setAngle:270.f];
+	[dot1.imageView setImage:[UIImage imageNamed:@"girl"]];
 }
 - (void)circleSelector:(NOCircleSelector *)circleSelector changedDotConnections:(NSArray *)dotConnections {
     for (NOCircleDotConnection *dotConnection in dotConnections) {
@@ -157,4 +159,4 @@ Available under the Apache 2.0 license. See the LICENSE file for more info.
 
 ## Requirements
 
-Requires Xcode 6, targeting either iOS 8.0 or higher.
+Requires Xcode 6, targeting either iOS 5.0 or higher.

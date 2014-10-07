@@ -7,6 +7,7 @@
 //
 
 #import "NOCircleDot.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation NOCircleDot
 
@@ -37,6 +38,11 @@
     [_textLabel setBackgroundColor:[UIColor clearColor]];
     [_textLabel setTextAlignment:NSTextAlignmentCenter];
     [self addSubview:_textLabel];
+    
+    _imageView = [[UIImageView alloc] init];
+    [_imageView setContentMode:UIViewContentModeScaleAspectFill];
+    [_imageView.layer setMasksToBounds:YES];
+    [self addSubview:_imageView];
     
     _lineWidth = 1.f;
     _angle = 0.f;
@@ -73,7 +79,14 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    [_textLabel setFrame:self.bounds];
+    CGRect frame = self.bounds;
+    [_textLabel setFrame:frame];
+    
+    CGRect imageViewFrame = CGRectIntegral(CGRectInset(frame, _lineWidth, _lineWidth));
+    [_imageView setFrame:imageViewFrame];
+    
+    CGFloat imageViewCornerRadius = (CGRectGetWidth(imageViewFrame) / 2.f);
+    [_imageView.layer setCornerRadius:imageViewCornerRadius];
 }
 
 - (void)drawRect:(CGRect)rect {

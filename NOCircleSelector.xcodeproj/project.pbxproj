@@ -17,6 +17,7 @@
 		6463BB6E19DAD9C10000C235 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6463BB6D19DAD9C10000C235 /* AppDelegate.m */; };
 		6463BB7219DADA620000C235 /* ExampleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6463BB7119DADA620000C235 /* ExampleView.m */; };
 		6463BB7619DADBC60000C235 /* NOCircleSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 6463BB7519DADBC60000C235 /* NOCircleSelector.m */; };
+		64C3C66319E404FB00BD5AA4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C3C66219E404FB00BD5AA4 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		6463BB7119DADA620000C235 /* ExampleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExampleView.m; path = Example/Views/ExampleView.m; sourceTree = SOURCE_ROOT; };
 		6463BB7419DADBC60000C235 /* NOCircleSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOCircleSelector.h; sourceTree = "<group>"; };
 		6463BB7519DADBC60000C235 /* NOCircleSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOCircleSelector.m; sourceTree = "<group>"; };
+		64C3C66219E404FB00BD5AA4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64C3C66319E404FB00BD5AA4 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +98,7 @@
 				6463BB6D19DAD9C10000C235 /* AppDelegate.m */,
 				6463BB7319DADB2F0000C235 /* NOCircleSelector */,
 				6463BB5F19DAD8C30000C235 /* Example */,
+				64C3C66419E4175D00BD5AA4 /* Frameworks */,
 				6463BB5E19DAD8B80000C235 /* Resources */,
 				6463BB3819DAD8A50000C235 /* Supporting Files */,
 			);
@@ -166,6 +170,14 @@
 				643EB79019DD4AD500D65CC3 /* NOCircleDotConnection.m */,
 			);
 			name = NOCircleSelector;
+			sourceTree = "<group>";
+		};
+		64C3C66419E4175D00BD5AA4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64C3C66219E404FB00BD5AA4 /* QuartzCore.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
