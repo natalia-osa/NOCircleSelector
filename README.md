@@ -1,4 +1,4 @@
-<p align="center" ><img src="https://raw.github.com/natalia-osa/NOCircleSelector/master/ReadmeImages/Demo.gif" alt="NOCircleSelector" title="NOCircleSelector" height="240"></p>
+<p align="center" ><img src="https://raw.github.com/natalia-osa/NOCircleSelector/master/ReadmeImages/Demo.gif" alt="NOCircleSelector" title="NOCircleSelector" height="568"></p>
 
 Circle shaped control to select given number of values.
 
@@ -151,11 +151,9 @@ _circleSelector = [[NOCircleSelector alloc] initWithFrame:frame];
 
 ## Demo
 
-Contains simple but not configured project with outlook like:
-<p align="center" ><img src="https://raw.github.com/natalia-osa/NOCircleSelector/master/ReadmeImages/EasyDemo.png" alt="NOCircleSelector" title="NOCircleSelector" height="240"></p>
+Contains 2 examples. The first one (on the left) is simple < 20 lines configuration. The second one handles minimum and maximum values, line colors, widths etc.
 
-Also there is customised example with more code looking like:
-<p align="center" ><img src="https://raw.github.com/natalia-osa/NOCircleSelector/master/ReadmeImages/CustomizedDemo.png" alt="NOCircleSelector" title="NOCircleSelector" height="240"></p>
+<p align="center" ><img src="https://raw.github.com/natalia-osa/NOCircleSelector/master/ReadmeImages/EasyDemo.png" alt="NOCircleSelector" title="NOCircleSelector" height="568">   <img src="https://raw.github.com/natalia-osa/NOCircleSelector/master/ReadmeImages/CustomizedDemo.png" alt="NOCircleSelector" title="NOCircleSelector" height="568"></p>
 
 ## Author
 
