@@ -4,7 +4,7 @@ Pod::Spec.new do |spec|
   spec.summary      = "Circle shaped control to select given number of values."
   spec.homepage     = "http://macrix.com/"
   spec.license      = 'Apache 2.0'
-  spec.author       = { "natalia.osiecka" => "no@macrix.eu" }
+  spec.author       = { "natalia.osiecka" => "osiecka.n@gmail.com" }
   spec.source       = { :git => 'https://github.com/natalia-osa/NOCircleSelector.git', :tag => '0.2'}
 
   spec.requires_arc = true

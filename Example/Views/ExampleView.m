@@ -8,12 +8,6 @@
 
 #import "ExampleView.h"
 
-@interface ExampleView ()
-
-@property (nonatomic, strong) CAGradientLayer *gradientLayer;
-
-@end
-
 @implementation ExampleView
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -54,7 +48,7 @@
 - (void)layoutSublayersOfLayer:(CALayer *)layer {
     [super layoutSublayersOfLayer:layer];
     
-    [self.layer.sublayers[0] setFrame:self.bounds];
+    [self.layer.sublayers.firstObject setFrame:self.bounds];
 }
 
 @end

@@ -148,6 +148,15 @@ _circleSelector = [[NOCircleSelector alloc] initWithFrame:frame];
     [_view.valueLabel setHidden:YES];
 }
 ```
+
+## Demo
+
+Contains simple but not configured project with outlook like:
+<p align="center" ><img src="https://raw.github.com/natalia-osa/NOCircleSelector/master/ReadmeImages/EasyDemo.png" alt="NOCircleSelector" title="NOCircleSelector" height="240"></p>
+
+Also there is customised example with more code looking like:
+<p align="center" ><img src="https://raw.github.com/natalia-osa/NOCircleSelector/master/ReadmeImages/CustomizedDemo.png" alt="NOCircleSelector" title="NOCircleSelector" height="240"></p>
+
 ## Author
 
 Natalia Osiecka, osiecka.n@gmail.com

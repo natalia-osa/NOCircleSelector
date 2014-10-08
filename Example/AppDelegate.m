@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ExampleViewController.h"
+#import "EasyExampleViewController.h"
 
 @interface AppDelegate ()
 
@@ -23,7 +24,17 @@
     
     // create and push the controller
     UIViewController *viewController = [[ExampleViewController alloc] init];
-    [self.window setRootViewController:viewController];
+    UIViewController *easyViewController = [[EasyExampleViewController alloc] init];
+    
+    UITabBarController *tabbarController = [[UITabBarController alloc] init];
+    [tabbarController setViewControllers:@[viewController, easyViewController]];
+    
+    [self.window setRootViewController:tabbarController];
+    
+    if ([self.window respondsToSelector:@selector(tintColor)]) {
+        [self.window setTintColor:[UIColor redColor]];
+        [tabbarController.tabBar setAlpha:0.5f];
+    }
     
     // run
     return YES;

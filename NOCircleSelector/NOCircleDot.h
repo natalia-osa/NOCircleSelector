@@ -53,4 +53,25 @@
  */
 @property (nonatomic) CGFloat maxAngle;
 
+/**
+ *  Convenience method to calculate value for given angle.
+ *
+ *  @param angle    Angle to translate into another coordinate system.
+ *  @param maxAngle Max angle for given dot (degrees).
+ *  @param maxValue Max value for given dot.
+ *
+ *  @return Value for given angle.
+ */
++ (NSInteger)valueForAngle:(CGFloat)angle maxAngle:(CGFloat)maxAngle maxValue:(CGFloat)maxValue;
+
+/**
+ *  Convenience method to get dot with tag.
+ *
+ *  @param tag  Tag of needed dot.
+ *  @param dots Array with NOCircleDots.
+ *
+ *  @return Dot with given tag. Nil if dots doesn't contain it.
+ */
++ (NOCircleDot *)dotWithTag:(NSUInteger)tag fromDots:(NSArray *)dots;
+
 @end

@@ -285,6 +285,7 @@
     CGFloat deltaX = middleCirclePoint.x - point.x;
     CGFloat angleInDegrees = [self normalizeAngle:(atan2f(deltaY, deltaX) * 180 / M_PI - 90)];
     int minAngle = intValue(dot.minAngle), maxAngle = intValue(dot.maxAngle), angle = intValue(dot.angle), newAngle = intValue(angleInDegrees);
+    BOOL circleRotated = NO;
     
     // don't allow to pass min / max values
     BOOL isInForbiddenRange = (newAngle > maxAngle) || (newAngle < minAngle);
@@ -296,14 +297,19 @@
             return;
         } else if (differenceToMax < differenceToMin) {
             angleInDegrees = dot.maxAngle;
+            circleRotated = YES;
         } else {
             angleInDegrees = dot.minAngle;
+            circleRotated = YES;
         }
     }
     
     // don't allow to cycle
     if ((angle == minAngle || angle == maxAngle) && (newAngle < minAngle || newAngle > maxAngle)) {
         return;
+    }
+    if ((dot.angle < minAngle + 45 && newAngle > maxAngle - 45) || (dot.angle > maxAngle - 45 && newAngle < minAngle + 45)) {
+        circleRotated = YES;
     }
     // update the angle
     if (angle != newAngle) {
@@ -313,7 +319,7 @@
             [_delegate circleSelector:self updatedDot:dot];
         }
         // update the view
-        BOOL viewCouldJumpBetweenProhibitedArea = (angle == minAngle || angle == maxAngle);
+        BOOL viewCouldJumpBetweenProhibitedArea = (angle == minAngle || angle == maxAngle) || circleRotated;
         if (viewCouldJumpBetweenProhibitedArea) {
             [self setNeedsDisplay];
         } else {

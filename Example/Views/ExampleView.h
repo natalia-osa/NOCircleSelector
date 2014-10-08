@@ -15,5 +15,6 @@
 @property (nonatomic, strong, readonly) NOCircleSelector *circleSelector;
 @property (nonatomic, strong, readonly) NOCircleSelector *smallCircleSelector;
 @property (nonatomic, strong, readonly) UILabel *valueLabel;
+@property (nonatomic, strong) CAGradientLayer *gradientLayer;
 
 @end

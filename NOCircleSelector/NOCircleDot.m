@@ -34,15 +34,15 @@
     [self setAutoresizesSubviews:YES];
     [self setContentMode:UIViewContentModeRedraw];
     
-    _textLabel = [[UILabel alloc] init];
-    [_textLabel setBackgroundColor:[UIColor clearColor]];
-    [_textLabel setTextAlignment:NSTextAlignmentCenter];
-    [self addSubview:_textLabel];
-    
     _imageView = [[UIImageView alloc] init];
     [_imageView setContentMode:UIViewContentModeScaleAspectFill];
     [_imageView.layer setMasksToBounds:YES];
     [self addSubview:_imageView];
+    
+    _textLabel = [[UILabel alloc] init];
+    [_textLabel setBackgroundColor:[UIColor clearColor]];
+    [_textLabel setTextAlignment:NSTextAlignmentCenter];
+    [self addSubview:_textLabel];
     
     _lineWidth = 1.f;
     _angle = 0.f;
@@ -121,6 +121,22 @@
     CGContextSetStrokeColorWithColor(context, _lineColor.CGColor);
     CGContextAddArc(context, CGRectGetMidX(circleRect), CGRectGetMidY(circleRect), MIN(CGRectGetWidth(circleRect), CGRectGetHeight(circleRect)) / 2.f, radians(0), radians(360), NO);
     CGContextStrokePath(context);
+}
+
+#pragma mark - Class methods
+
++ (NSInteger)valueForAngle:(CGFloat)angle maxAngle:(CGFloat)maxAngle maxValue:(CGFloat)maxValue {
+    return floorf(maxValue * angle / maxAngle);
+}
+
++ (NOCircleDot *)dotWithTag:(NSUInteger)tag fromDots:(NSArray *)dots {
+    for (NOCircleDot *dot in dots) {
+        if (dot.tag == tag) {
+            return dot;
+        }
+    }
+    
+    return nil;
 }
 
 @end

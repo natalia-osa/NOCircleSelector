@@ -18,6 +18,8 @@
 		6463BB7219DADA620000C235 /* ExampleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6463BB7119DADA620000C235 /* ExampleView.m */; };
 		6463BB7619DADBC60000C235 /* NOCircleSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 6463BB7519DADBC60000C235 /* NOCircleSelector.m */; };
 		64C3C66319E404FB00BD5AA4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C3C66219E404FB00BD5AA4 /* QuartzCore.framework */; };
+		64C3C66719E4A2B400BD5AA4 /* EasyExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C3C66619E4A2B400BD5AA4 /* EasyExampleViewController.m */; };
+		64C3C66A19E4A31F00BD5AA4 /* EasyExampleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C3C66919E4A31F00BD5AA4 /* EasyExampleView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,10 @@
 		6463BB7419DADBC60000C235 /* NOCircleSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOCircleSelector.h; sourceTree = "<group>"; };
 		6463BB7519DADBC60000C235 /* NOCircleSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOCircleSelector.m; sourceTree = "<group>"; };
 		64C3C66219E404FB00BD5AA4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		64C3C66519E4A2B400BD5AA4 /* EasyExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EasyExampleViewController.h; path = Example/Controllers/EasyExampleViewController.h; sourceTree = SOURCE_ROOT; };
+		64C3C66619E4A2B400BD5AA4 /* EasyExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EasyExampleViewController.m; path = Example/Controllers/EasyExampleViewController.m; sourceTree = SOURCE_ROOT; };
+		64C3C66819E4A31F00BD5AA4 /* EasyExampleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EasyExampleView.h; path = Example/Views/EasyExampleView.h; sourceTree = SOURCE_ROOT; };
+		64C3C66919E4A31F00BD5AA4 /* EasyExampleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EasyExampleView.m; path = Example/Views/EasyExampleView.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +152,8 @@
 				6463BB6F19DADA4A0000C235 /* Views */,
 				6463BB6919DAD9B50000C235 /* ExampleViewController.h */,
 				6463BB6A19DAD9B50000C235 /* ExampleViewController.m */,
+				64C3C66519E4A2B400BD5AA4 /* EasyExampleViewController.h */,
+				64C3C66619E4A2B400BD5AA4 /* EasyExampleViewController.m */,
 			);
 			name = Example;
 			sourceTree = "<group>";
@@ -155,6 +163,8 @@
 			children = (
 				6463BB7019DADA620000C235 /* ExampleView.h */,
 				6463BB7119DADA620000C235 /* ExampleView.m */,
+				64C3C66819E4A31F00BD5AA4 /* EasyExampleView.h */,
+				64C3C66919E4A31F00BD5AA4 /* EasyExampleView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -300,7 +310,9 @@
 				643EB78A19DBE31400D65CC3 /* NOCircleDot.m in Sources */,
 				6463BB7619DADBC60000C235 /* NOCircleSelector.m in Sources */,
 				643EB79119DD4AD500D65CC3 /* NOCircleDotConnection.m in Sources */,
+				64C3C66719E4A2B400BD5AA4 /* EasyExampleViewController.m in Sources */,
 				6463BB6E19DAD9C10000C235 /* AppDelegate.m in Sources */,
+				64C3C66A19E4A31F00BD5AA4 /* EasyExampleView.m in Sources */,
 				6463BB6B19DAD9B50000C235 /* ExampleViewController.m in Sources */,
 				6463BB6319DAD9600000C235 /* main.m in Sources */,
 				6463BB7219DADA620000C235 /* ExampleView.m in Sources */,
