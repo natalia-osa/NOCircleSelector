@@ -58,6 +58,14 @@
  */
 - (void)circleSelector:(NOCircleSelector *)circleSelector endedUpdatingDotPosition:(NOCircleDot *)dot;
 
+/**
+ *  Allows to quickly swap base class of dot. Feel free to subclass NOCircleDot and pass it here.
+ *
+ *  @param circleSelector Current circleSelector instance.
+ *  @return Subclass of NOCircleDot, which will be propagated to given controls.
+ */
+- (Class)circleSelectorRequestsNOCircleDotClass:(NOCircleSelector *)circleSelector;
+
 @end
 
 /**
@@ -104,5 +112,10 @@
  *  Allows quick access to each dot connection. Readwrite but override only when you really know what you're doing.
  */
 @property (nonatomic) NSArray *dotConnections;
+
+/**
+ *  Public common initializer. Override and don't forget to call super.
+ */
+- (void)commonInit;
 
 @end

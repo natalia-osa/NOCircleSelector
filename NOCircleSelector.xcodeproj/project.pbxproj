@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		641FEF0D19EBC42C00DDDFCF /* ExampleCircleDot.m in Sources */ = {isa = PBXBuildFile; fileRef = 641FEF0C19EBC42C00DDDFCF /* ExampleCircleDot.m */; };
 		643EB78A19DBE31400D65CC3 /* NOCircleDot.m in Sources */ = {isa = PBXBuildFile; fileRef = 643EB78919DBE31400D65CC3 /* NOCircleDot.m */; };
 		643EB79119DD4AD500D65CC3 /* NOCircleDotConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 643EB79019DD4AD500D65CC3 /* NOCircleDotConnection.m */; };
 		6463BB5519DAD8A50000C235 /* NOCircleSelectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6463BB5419DAD8A50000C235 /* NOCircleSelectorTests.m */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		641FEF0B19EBC42C00DDDFCF /* ExampleCircleDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExampleCircleDot.h; path = Example/Views/ExampleCircleDot.h; sourceTree = SOURCE_ROOT; };
+		641FEF0C19EBC42C00DDDFCF /* ExampleCircleDot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExampleCircleDot.m; path = Example/Views/ExampleCircleDot.m; sourceTree = SOURCE_ROOT; };
 		643EB78819DBE31400D65CC3 /* NOCircleDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOCircleDot.h; sourceTree = "<group>"; };
 		643EB78919DBE31400D65CC3 /* NOCircleDot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOCircleDot.m; sourceTree = "<group>"; };
 		643EB78F19DD4AD500D65CC3 /* NOCircleDotConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOCircleDotConnection.h; sourceTree = "<group>"; };
@@ -165,6 +168,8 @@
 				6463BB7119DADA620000C235 /* ExampleView.m */,
 				64C3C66819E4A31F00BD5AA4 /* EasyExampleView.h */,
 				64C3C66919E4A31F00BD5AA4 /* EasyExampleView.m */,
+				641FEF0B19EBC42C00DDDFCF /* ExampleCircleDot.h */,
+				641FEF0C19EBC42C00DDDFCF /* ExampleCircleDot.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 				64C3C66A19E4A31F00BD5AA4 /* EasyExampleView.m in Sources */,
 				6463BB6B19DAD9B50000C235 /* ExampleViewController.m in Sources */,
 				6463BB6319DAD9600000C235 /* main.m in Sources */,
+				641FEF0D19EBC42C00DDDFCF /* ExampleCircleDot.m in Sources */,
 				6463BB7219DADA620000C235 /* ExampleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,6 +9,7 @@
 #import "EasyExampleViewController.h"
 // Views
 #import "EasyExampleView.h"
+#import "ExampleCircleDot.h"
 
 @interface EasyExampleViewController () <NOCircleSelectorDelegate>
 
@@ -20,11 +21,11 @@
 #define bigMinAngle 0.f
 #define smallMaxAngle 310.f
 
-typedef NS_ENUM(NSUInteger, ExampleCircleDot) {
-    ExampleCircleDotStart,
-    ExampleCircleDotValue,
-    ExampleCircleDotEnd,
-    ExampleCircleDotValue2,
+typedef NS_ENUM(NSUInteger, ExampleCircleDotKind) {
+    ExampleCircleDotKindStart,
+    ExampleCircleDotKindValue,
+    ExampleCircleDotKindEnd,
+    ExampleCircleDotKindValue2,
 };
 
 typedef NS_ENUM(NSUInteger, ExampleCircleSelector) {
@@ -80,23 +81,23 @@ typedef NS_ENUM(NSUInteger, ExampleCircleSelector) {
 
 #pragma mark - NOCircleSelectorDelegate
 
+- (Class)circleSelectorRequestsNOCircleDotClass:(NOCircleSelector *)circleSelector {
+    return [ExampleCircleDot class];
+}
+
 - (void)circleSelector:(NOCircleSelector *)circleSelector changedDots:(NSArray *)dots {
     CGFloat angle = 0.f;
     int counter = 0;
     
     for (NOCircleDot *dot in dots) {
-        [dot setLineColor:[UIColor redColor]];
-        [dot setFillColor:[UIColor blackColor]];
-        [dot.textLabel setTextColor:[UIColor redColor]];
-        
         if (counter == 0) {
-            [dot setTag:ExampleCircleDotStart];
+            [dot setTag:ExampleCircleDotKindStart];
             [dot setUserInteractionEnabled:NO];
         } else if (counter == dots.count - 1) {
-            [dot setTag:ExampleCircleDotEnd];
+            [dot setTag:ExampleCircleDotKindEnd];
             [dot setUserInteractionEnabled:NO];
         } else {
-            [dot setTag:ExampleCircleDotValue];
+            [dot setTag:ExampleCircleDotKindValue];
         }
         
         if (circleSelector.tag == ExampleCircleSelectorSmall) {
@@ -112,7 +113,7 @@ typedef NS_ENUM(NSUInteger, ExampleCircleSelector) {
                     [dot setMinAngle:bigMinAngle];
                     break;
                 } case 2: {
-                    [dot setTag:ExampleCircleDotValue2];
+                    [dot setTag:ExampleCircleDotKindValue2];
                     [dot setAngle:150.f];
                     [dot setMaxAngle:smallMaxAngle];
                     break;
@@ -169,20 +170,20 @@ typedef NS_ENUM(NSUInteger, ExampleCircleSelector) {
     for (NOCircleDotConnection *dotConnection in dotConnections) {
         [dotConnection setConnectionColor:[UIColor redColor]];
         
-        if ((circleSelector.tag == ExampleCircleSelectorBig && [dotConnection dotConnectionBeetweenTag1:ExampleCircleDotStart tag2:ExampleCircleDotValue]) ||
-            (circleSelector.tag == ExampleCircleSelectorSmall && [dotConnection dotConnectionBeetweenTag1:ExampleCircleDotValue tag2:ExampleCircleDotValue2])) {
+        if ((circleSelector.tag == ExampleCircleSelectorBig && [dotConnection dotConnectionBeetweenTag1:ExampleCircleDotKindStart tag2:ExampleCircleDotKindValue]) ||
+            (circleSelector.tag == ExampleCircleSelectorSmall && [dotConnection dotConnectionBeetweenTag1:ExampleCircleDotKindValue tag2:ExampleCircleDotKindValue2])) {
             [dotConnection setLineWidth:5.f];
             if (circleSelector.tag == ExampleCircleSelectorSmall) {
                 [dotConnection setConnectionColor:[UIColor whiteColor]];
             }
-        } else if ([dotConnection dotConnectionBeetweenTag1:ExampleCircleDotStart tag2:ExampleCircleDotEnd]) {
+        } else if ([dotConnection dotConnectionBeetweenTag1:ExampleCircleDotKindStart tag2:ExampleCircleDotKindEnd]) {
             [dotConnection setConnectionColor:[UIColor clearColor]];
         }
     }
 }
 
 - (void)circleSelector:(NOCircleSelector *)circleSelector updatedDot:(NOCircleDot *)dot {
-    if (dot.tag == ExampleCircleDotValue || dot.tag == ExampleCircleDotValue2) {
+    if (dot.tag == ExampleCircleDotKindValue || dot.tag == ExampleCircleDotKindValue2) {
         //##OBJCLEAN_SKIP##
         NSString *text = [NSString stringWithFormat:@"%ld", (circleSelector.tag == ExampleCircleSelectorBig)
                                                         ? (long)[NOCircleDot valueForAngle:dot.angle maxAngle:bigMaxAngle maxValue:500.f]
@@ -190,9 +191,9 @@ typedef NS_ENUM(NSUInteger, ExampleCircleSelector) {
         //##OBJCLEAN_ENDSKIP##
         [dot.textLabel setText:text];
         [_aView.valueLabel setText:text];
-    } else if (dot.tag == ExampleCircleDotEnd) {
+    } else if (dot.tag == ExampleCircleDotKindEnd) {
         [dot.textLabel setText:[NSString stringWithFormat:@"%d", (circleSelector.tag == ExampleCircleSelectorBig) ? 500 : 10]];
-    } else if (dot.tag == ExampleCircleDotStart && circleSelector.tag != ExampleCircleSelectorMedium) {
+    } else if (dot.tag == ExampleCircleDotKindStart && circleSelector.tag != ExampleCircleSelectorMedium) {
         [dot.textLabel setText:@"0"];
         if (circleSelector.tag == ExampleCircleSelectorSmall) {
             [dot.textLabel setText:NSLocalizedString(@"MIN", nil)];
@@ -200,12 +201,12 @@ typedef NS_ENUM(NSUInteger, ExampleCircleSelector) {
     }
     
     if (circleSelector.tag == ExampleCircleSelectorSmall) {
-        if (dot.tag == ExampleCircleDotValue) { // dot is the lower one
-            NOCircleDot *dot2 = [NOCircleDot dotWithTag:ExampleCircleDotValue2 fromDots:_aView.smallCircleSelector.dots];
+        if (dot.tag == ExampleCircleDotKindValue) { // dot is the lower one
+            NOCircleDot *dot2 = [NOCircleDot dotWithTag:ExampleCircleDotKindValue2 fromDots:_aView.smallCircleSelector.dots];
             dot2.minAngle = dot.angle;
             dot.maxAngle = dot2.angle;
-        } else if (dot.tag == ExampleCircleDotValue2) { // dot is the higher one
-            NOCircleDot *dot1 = [NOCircleDot dotWithTag:ExampleCircleDotValue fromDots:_aView.smallCircleSelector.dots];
+        } else if (dot.tag == ExampleCircleDotKindValue2) { // dot is the higher one
+            NOCircleDot *dot1 = [NOCircleDot dotWithTag:ExampleCircleDotKindValue fromDots:_aView.smallCircleSelector.dots];
             dot1.maxAngle = dot.angle;
             dot.minAngle = dot1.angle;
         }

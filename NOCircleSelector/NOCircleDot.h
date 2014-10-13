@@ -62,7 +62,7 @@
  *
  *  @return Value for given angle.
  */
-+ (NSInteger)valueForAngle:(CGFloat)angle maxAngle:(CGFloat)maxAngle maxValue:(CGFloat)maxValue;
++ (CGFloat)valueForAngle:(CGFloat)angle maxAngle:(CGFloat)maxAngle maxValue:(CGFloat)maxValue;
 
 /**
  *  Convenience method to get dot with tag.
@@ -73,5 +73,10 @@
  *  @return Dot with given tag. Nil if dots doesn't contain it.
  */
 + (NOCircleDot *)dotWithTag:(NSUInteger)tag fromDots:(NSArray *)dots;
+
+/**
+ *  Public common initializer. Override and don't forget to call super.
+ */
+- (void)commonInit;
 
 @end

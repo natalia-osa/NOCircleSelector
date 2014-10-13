@@ -86,7 +86,7 @@ In NOCircleDotConnection:
 #### Installation with CocoaPods
 [CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries.
 ```ruby
-pod "NOCircleSelector", "~> 0.2"
+pod "NOCircleSelector", "~> 0.3"
 ```
 #### Submodule
 In your projects git folder type:
@@ -147,6 +147,9 @@ _circleSelector = [[NOCircleSelector alloc] initWithFrame:frame];
 - (void)circleSelector:(NOCircleSelector *)circleSelector endedUpdatingDotPosition:(NOCircleDot *)dot {
     [_view.valueLabel setHidden:YES];
 }
+- (Class)circleSelectorRequestsNOCircleDotClass:(NOCircleSelector *)circleSelector {
+    return [ExampleCircleDot class];
+}
 ```
 
 ## Demo
@@ -154,6 +157,11 @@ _circleSelector = [[NOCircleSelector alloc] initWithFrame:frame];
 Contains 2 examples. The first one (on the left) is simple < 20 lines configuration. The second one handles minimum and maximum values, line colors, widths etc.
 
 <p align="center" ><img src="https://raw.github.com/natalia-osa/NOCircleSelector/master/ReadmeImages/EasyDemo.png" alt="NOCircleSelector" title="NOCircleSelector" height="568">   <img src="https://raw.github.com/natalia-osa/NOCircleSelector/master/ReadmeImages/CustomizedDemo.png" alt="NOCircleSelector" title="NOCircleSelector" height="568"></p>
+
+## ChangeLog
+0.3 Fixed issue with NSInteger valueForDot - now using CGFloat for more precision. Added fast method to swap basic class of NOCircleDot (delegate).
+0.2 Fixed overlapping views stealing touch, min/max angle bug, added option to add images to each dot.
+0.1 Basic version - Multiple selectors, models, touch handlers, logic.
 
 ## Author
 

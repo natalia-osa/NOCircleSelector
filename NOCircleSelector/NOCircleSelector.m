@@ -58,7 +58,13 @@
     // create new dots
     NSMutableArray *mDots = [NSMutableArray new];
     for (NSInteger i = 0; i < numberOfDots; i++) {
-        NOCircleDot *dot = [[NOCircleDot alloc] init];
+        NOCircleDot *dot = nil;
+        if ([_delegate respondsToSelector:@selector(circleSelectorRequestsNOCircleDotClass:)]) {
+            dot = [[[_delegate circleSelectorRequestsNOCircleDotClass:self] alloc] init];
+        }
+        if (!dot) {
+            dot = [[NOCircleDot alloc] init];
+        }
         [dot setBackgroundColor:[self backgroundColor]];
         [mDots addObject:dot];
     }
