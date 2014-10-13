@@ -159,9 +159,9 @@ Contains 2 examples. The first one (on the left) is simple < 20 lines configurat
 <p align="center" ><img src="https://raw.github.com/natalia-osa/NOCircleSelector/master/ReadmeImages/EasyDemo.png" alt="NOCircleSelector" title="NOCircleSelector" height="568">   <img src="https://raw.github.com/natalia-osa/NOCircleSelector/master/ReadmeImages/CustomizedDemo.png" alt="NOCircleSelector" title="NOCircleSelector" height="568"></p>
 
 ## ChangeLog
-0.3 Fixed issue with NSInteger valueForDot - now using CGFloat for more precision. Added fast method to swap basic class of NOCircleDot (delegate).
-0.2 Fixed overlapping views stealing touch, min/max angle bug, added option to add images to each dot.
-0.1 Basic version - Multiple selectors, models, touch handlers, logic.
+- 0.3 Fixed issue with NSInteger valueForDot - now using CGFloat for more precision. Added fast method to swap basic class of NOCircleDot (delegate).
+- 0.2 Fixed overlapping views stealing touch, min/max angle bug, added option to add images to each dot.
+- 0.1 Basic version - Multiple selectors, models, touch handlers, logic.
 
 ## Author
 
