@@ -125,8 +125,12 @@
 
 #pragma mark - Class methods
 
-+ (CGFloat)valueForAngle:(CGFloat)angle maxAngle:(CGFloat)maxAngle maxValue:(CGFloat)maxValue {
-    return maxValue * angle / maxAngle;
++ (CGFloat)valueForAngle:(CGFloat)angle maxAngle:(CGFloat)maxAngle maxValue:(CGFloat)maxValue minAngle:(CGFloat)minAngle minValue:(CGFloat)minValue {
+    return minValue + (angle - minAngle) * (maxValue - minValue) / (maxAngle - minAngle);
+}
+
++ (CGFloat)angleForValue:(CGFloat)value maxAngle:(CGFloat)maxAngle maxValue:(CGFloat)maxValue minAngle:(CGFloat)minAngle minValue:(CGFloat)minValue {
+    return (value - minValue) * (maxAngle - minAngle) / (maxValue - minValue) + minAngle;
 }
 
 + (NOCircleDot *)dotWithTag:(NSUInteger)tag fromDots:(NSArray *)dots {

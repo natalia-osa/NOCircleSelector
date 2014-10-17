@@ -10,7 +10,7 @@ There are three kinds of objects:
 The recommended method to differ the dot is to use NS_ENUM and set tags of these.
 
 ## Customisable:
-In NOCircleSelector (+ all UIView properties like backgroundColor etc):
+#### In NOCircleSelector (+ all UIView properties like backgroundColor etc):
 - numberOfDots
 ```objective-c
 [_circleSelector setNumberOfDots:4];
@@ -32,7 +32,7 @@ In NOCircleSelector (+ all UIView properties like backgroundColor etc):
 [_circleSelector setFillColor:[UIColor blueColor]];
 ```
 
-In NOCircleDot (+ all UIView properties like backgroundColor etc):
+#### In NOCircleDot (+ all UIView properties like backgroundColor etc):
 - lineWidth
 ```objective-c
 [dot setLineWidth:2.f];
@@ -66,7 +66,7 @@ In NOCircleDot (+ all UIView properties like backgroundColor etc):
 [dot setMaxAngle:360.f];
 ```
 
-In NOCircleDotConnection:
+#### In NOCircleDotConnection:
 - startDot - set automatically, do not overload if not required. Describes the first dot of connection.
 - endDot - set automatically, do not overload if not required. Describes the second dot of connection.
 - connectionColor
@@ -86,7 +86,7 @@ In NOCircleDotConnection:
 #### Installation with CocoaPods
 [CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries.
 ```ruby
-pod "NOCircleSelector", "~> 0.3"
+pod "NOCircleSelector", "~> 0.4"
 ```
 #### Submodule
 In your projects git folder type:
@@ -159,6 +159,7 @@ Contains 2 examples. The first one (on the left) is simple < 20 lines configurat
 <p align="center" ><img src="https://raw.github.com/natalia-osa/NOCircleSelector/master/ReadmeImages/EasyDemo.png" alt="NOCircleSelector" title="NOCircleSelector" height="568">   <img src="https://raw.github.com/natalia-osa/NOCircleSelector/master/ReadmeImages/CustomizedDemo.png" alt="NOCircleSelector" title="NOCircleSelector" height="568"></p>
 
 ## ChangeLog
+- 0.4 Added method to get value from angle and rewritten method to get angle from value so it takes upon consideration minimum angle + minimum value.
 - 0.3 Fixed issue with NSInteger valueForDot - now using CGFloat for more precision. Added fast method to swap basic class of NOCircleDot (delegate).
 - 0.2 Fixed overlapping views stealing touch, min/max angle bug, added option to add images to each dot.
 - 0.1 Basic version - Multiple selectors, models, touch handlers, logic.

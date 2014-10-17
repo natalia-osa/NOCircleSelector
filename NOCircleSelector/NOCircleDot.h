@@ -59,10 +59,25 @@
  *  @param angle    Angle to translate into another coordinate system.
  *  @param maxAngle Max angle for given dot (degrees).
  *  @param maxValue Max value for given dot.
+ *  @param minAngle Min angle for given dot (degrees).
+ *  @param minValue Min value for given dot.
  *
  *  @return Value for given angle.
  */
-+ (CGFloat)valueForAngle:(CGFloat)angle maxAngle:(CGFloat)maxAngle maxValue:(CGFloat)maxValue;
++ (CGFloat)valueForAngle:(CGFloat)angle maxAngle:(CGFloat)maxAngle maxValue:(CGFloat)maxValue minAngle:(CGFloat)minAngle minValue:(CGFloat)minValue;
+
+/**
+ *  Convenience method to calculate angle for given value.
+ *
+ *  @param value    Value to translate into another coordinate system.
+ *  @param maxAngle Max angle for given dot (degrees).
+ *  @param maxValue Max value for given dot.
+ *  @param maxAngle Max angle for given dot (degrees).
+ *  @param maxValue Max value for given dot.
+ *
+ *  @return Angle for given value.
+ */
++ (CGFloat)angleForValue:(CGFloat)value maxAngle:(CGFloat)maxAngle maxValue:(CGFloat)maxValue minAngle:(CGFloat)minAngle minValue:(CGFloat)minValue;
 
 /**
  *  Convenience method to get dot with tag.
