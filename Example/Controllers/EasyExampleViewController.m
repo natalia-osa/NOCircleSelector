@@ -186,8 +186,8 @@ typedef NS_ENUM(NSUInteger, ExampleCircleSelector) {
     if (dot.tag == ExampleCircleDotKindValue || dot.tag == ExampleCircleDotKindValue2) {
         //##OBJCLEAN_SKIP##
         NSString *text = [NSString stringWithFormat:@"%ld", (circleSelector.tag == ExampleCircleSelectorBig)
-                                                        ? (long)[NOCircleDot valueForAngle:dot.angle maxAngle:bigMaxAngle maxValue:500.f]
-                                                        : (long)[NOCircleDot valueForAngle:dot.angle maxAngle:smallMaxAngle maxValue:10.f]];
+                                                        ? (long)[NOCircleDot valueForAngle:dot.angle maxAngle:bigMaxAngle maxValue:500.f minAngle:bigMinAngle minValue:0.f]
+                                                        : (long)[NOCircleDot valueForAngle:dot.angle maxAngle:smallMaxAngle maxValue:10.f minAngle:bigMinAngle minValue:0.f]];
         //##OBJCLEAN_ENDSKIP##
         [dot.textLabel setText:text];
         [_aView.valueLabel setText:text];
@@ -217,8 +217,8 @@ typedef NS_ENUM(NSUInteger, ExampleCircleSelector) {
     [_aView.valueLabel setHidden:NO];
     //##OBJCLEAN_SKIP##
     [_aView.valueLabel setText:[NSString stringWithFormat:@"%ld", (long)(circleSelector.tag == ExampleCircleSelectorBig
-                                                                         ? [NOCircleDot valueForAngle:dot.angle maxAngle:bigMaxAngle maxValue:500.f]
-                                                                         : [NOCircleDot valueForAngle:dot.angle maxAngle:smallMaxAngle maxValue:10.f])]];
+                                                                         ? [NOCircleDot valueForAngle:dot.angle maxAngle:bigMaxAngle maxValue:500.f minAngle:bigMinAngle minValue:0.f]
+                                                                         : [NOCircleDot valueForAngle:dot.angle maxAngle:smallMaxAngle maxValue:10.f minAngle:bigMinAngle minValue:0.f])]];
     //##OBJCLEAN_ENDSKIP##
 }
 

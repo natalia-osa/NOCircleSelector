@@ -60,7 +60,7 @@
 }
 
 - (void)circleSelector:(NOCircleSelector *)circleSelector updatedDot:(NOCircleDot *)dot {
-    [dot.textLabel setText:[NSString stringWithFormat:@"%ld", (long)[NOCircleDot valueForAngle:dot.angle maxAngle:360 maxValue:10.f]]];
+    [dot.textLabel setText:[NSString stringWithFormat:@"%ld", (long)[NOCircleDot valueForAngle:dot.angle maxAngle:360 maxValue:10.f minAngle:0.f minValue:0.f]]];
 }
 
 @end
