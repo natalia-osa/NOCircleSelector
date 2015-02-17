@@ -1,3 +1,6 @@
+[![Version](https://cocoapod-badges.herokuapp.com/v/NOCircleSelector/badge.png)](http://cocoadocs.org/docsets/NOCircleSelector) 
+[![Platform](https://cocoapod-badges.herokuapp.com/p/NOCircleSelector/badge.png)](http://cocoadocs.org/docsets/NOCircleSelector) 
+
 <p align="center" ><img src="https://raw.github.com/natalia-osa/NOCircleSelector/master/ReadmeImages/Demo.gif" alt="NOCircleSelector" title="NOCircleSelector" height="568"></p>
 
 Circle shaped control to select given number of values.
