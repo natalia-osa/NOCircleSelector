@@ -1,22 +1,22 @@
 //
-//  EasyExampleView.m
+//  NOSELAdvancedExampleView.m
 //  NOCircleSelector
 //
 //  Created by Natalia Osiecka on 08.10.2014.
-//  Copyright (c) 2014 PifPaf. All rights reserved.
+//  Copyright (c) 2014 iOskApps. All rights reserved.
 //
 
-#import "EasyExampleView.h"
+#import "NOSELAdvancedExampleView.h"
 
-@implementation EasyExampleView
+@implementation NOSELAdvancedExampleView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self setBackgroundColor:[UIColor blackColor]];
         
-        _mediumCircleSelector = [[NOCircleSelector alloc] initWithFrame:frame];
-        [_mediumCircleSelector setBackgroundColor:[UIColor clearColor]];
-        [self addSubview:_mediumCircleSelector];
+        _mediumCircleSelector = [[NOSELCircleSelector alloc] initWithFrame:frame];
+        [self.mediumCircleSelector setBackgroundColor:[UIColor clearColor]];
+        [self addSubview:self.mediumCircleSelector];
         
         [self.valueLabel setTextColor:[UIColor redColor]];
         
@@ -30,7 +30,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    [_mediumCircleSelector setFrame:CGRectInset(self.bounds, 65.f, 65.f)];
+    [self.mediumCircleSelector setFrame:CGRectInset(self.bounds, 65.f, 65.f)];
 }
 
 @end

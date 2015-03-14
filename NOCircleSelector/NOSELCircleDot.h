@@ -1,17 +1,14 @@
 //
-//  NOCircleDot.h
+//  NOSELCircleDot.h
 //  NOCircleSelector
 //
 //  Created by Natalia Osiecka on 01.10.2014.
-//  Copyright (c) 2014 Natalia Osiecka. All rights reserved.
+//  Copyright (c) 2014 iOskApps. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-#define radians(x) (x * M_PI / 180)
-#define degrees(x) (x * 180 / M_PI)
-
-@interface NOCircleDot : UIView
+@interface NOSELCircleDot : UIView
 
 /**
  *  Determines the width of selector line. Default 1.
@@ -87,7 +84,7 @@
  *
  *  @return Dot with given tag. Nil if dots doesn't contain it.
  */
-+ (NOCircleDot *)dotWithTag:(NSUInteger)tag fromDots:(NSArray *)dots;
++ (NOSELCircleDot *)dotWithTag:(NSUInteger)tag fromDots:(NSArray *)dots;
 
 /**
  *  Public common initializer. Override and don't forget to call super.

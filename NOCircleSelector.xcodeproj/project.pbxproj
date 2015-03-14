@@ -7,20 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		641FEF0D19EBC42C00DDDFCF /* ExampleCircleDot.m in Sources */ = {isa = PBXBuildFile; fileRef = 641FEF0C19EBC42C00DDDFCF /* ExampleCircleDot.m */; };
-		643EB78A19DBE31400D65CC3 /* NOCircleDot.m in Sources */ = {isa = PBXBuildFile; fileRef = 643EB78919DBE31400D65CC3 /* NOCircleDot.m */; };
-		643EB79119DD4AD500D65CC3 /* NOCircleDotConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 643EB79019DD4AD500D65CC3 /* NOCircleDotConnection.m */; };
+		64027E701A84F9E100191956 /* NOSELMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 64027E6F1A84F9E100191956 /* NOSELMath.m */; };
+		641FEF0D19EBC42C00DDDFCF /* NOSELExampleCircleDot.m in Sources */ = {isa = PBXBuildFile; fileRef = 641FEF0C19EBC42C00DDDFCF /* NOSELExampleCircleDot.m */; };
+		643EB78A19DBE31400D65CC3 /* NOSELCircleDot.m in Sources */ = {isa = PBXBuildFile; fileRef = 643EB78919DBE31400D65CC3 /* NOSELCircleDot.m */; };
+		643EB79119DD4AD500D65CC3 /* NOSELCircleDotConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 643EB79019DD4AD500D65CC3 /* NOSELCircleDotConnection.m */; };
 		6463BB5519DAD8A50000C235 /* NOCircleSelectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6463BB5419DAD8A50000C235 /* NOCircleSelectorTests.m */; };
 		6463BB6319DAD9600000C235 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6463BB6219DAD9600000C235 /* main.m */; };
 		6463BB6519DAD9770000C235 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6463BB6419DAD9770000C235 /* Images.xcassets */; };
 		6463BB6819DAD99B0000C235 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6463BB6619DAD99B0000C235 /* LaunchScreen.xib */; };
-		6463BB6B19DAD9B50000C235 /* ExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6463BB6A19DAD9B50000C235 /* ExampleViewController.m */; };
-		6463BB6E19DAD9C10000C235 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6463BB6D19DAD9C10000C235 /* AppDelegate.m */; };
-		6463BB7219DADA620000C235 /* ExampleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6463BB7119DADA620000C235 /* ExampleView.m */; };
-		6463BB7619DADBC60000C235 /* NOCircleSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 6463BB7519DADBC60000C235 /* NOCircleSelector.m */; };
+		6463BB6B19DAD9B50000C235 /* NOSELExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6463BB6A19DAD9B50000C235 /* NOSELExampleViewController.m */; };
+		6463BB6E19DAD9C10000C235 /* NOSELAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6463BB6D19DAD9C10000C235 /* NOSELAppDelegate.m */; };
+		6463BB7219DADA620000C235 /* NOSELExampleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6463BB7119DADA620000C235 /* NOSELExampleView.m */; };
+		6463BB7619DADBC60000C235 /* NOSELCircleSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 6463BB7519DADBC60000C235 /* NOSELCircleSelector.m */; };
 		64C3C66319E404FB00BD5AA4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C3C66219E404FB00BD5AA4 /* QuartzCore.framework */; };
-		64C3C66719E4A2B400BD5AA4 /* EasyExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C3C66619E4A2B400BD5AA4 /* EasyExampleViewController.m */; };
-		64C3C66A19E4A31F00BD5AA4 /* EasyExampleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C3C66919E4A31F00BD5AA4 /* EasyExampleView.m */; };
+		64C3C66719E4A2B400BD5AA4 /* NOSELAdvancedExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C3C66619E4A2B400BD5AA4 /* NOSELAdvancedExampleViewController.m */; };
+		64C3C66A19E4A31F00BD5AA4 /* NOSELAdvancedExampleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C3C66919E4A31F00BD5AA4 /* NOSELAdvancedExampleView.m */; };
+		91F612FB6AB28DD22CF8B016 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF75139B998A2A9AF3332F74 /* libPods.a */; };
+		D604751F2654B79E6B46FCBF /* libPods-NOCircleSelectorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE149F4253931CE15894E2BB /* libPods-NOCircleSelectorTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,12 +37,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		641FEF0B19EBC42C00DDDFCF /* ExampleCircleDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExampleCircleDot.h; path = Example/Views/ExampleCircleDot.h; sourceTree = SOURCE_ROOT; };
-		641FEF0C19EBC42C00DDDFCF /* ExampleCircleDot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExampleCircleDot.m; path = Example/Views/ExampleCircleDot.m; sourceTree = SOURCE_ROOT; };
-		643EB78819DBE31400D65CC3 /* NOCircleDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOCircleDot.h; sourceTree = "<group>"; };
-		643EB78919DBE31400D65CC3 /* NOCircleDot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOCircleDot.m; sourceTree = "<group>"; };
-		643EB78F19DD4AD500D65CC3 /* NOCircleDotConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOCircleDotConnection.h; sourceTree = "<group>"; };
-		643EB79019DD4AD500D65CC3 /* NOCircleDotConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOCircleDotConnection.m; sourceTree = "<group>"; };
+		083094847B1656A187122AC4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		64027E6E1A84F9E100191956 /* NOSELMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOSELMath.h; sourceTree = "<group>"; };
+		64027E6F1A84F9E100191956 /* NOSELMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOSELMath.m; sourceTree = "<group>"; };
+		641FEF0B19EBC42C00DDDFCF /* NOSELExampleCircleDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NOSELExampleCircleDot.h; path = Example/Views/NOSELExampleCircleDot.h; sourceTree = SOURCE_ROOT; };
+		641FEF0C19EBC42C00DDDFCF /* NOSELExampleCircleDot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NOSELExampleCircleDot.m; path = Example/Views/NOSELExampleCircleDot.m; sourceTree = SOURCE_ROOT; };
+		643EB78819DBE31400D65CC3 /* NOSELCircleDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOSELCircleDot.h; sourceTree = "<group>"; };
+		643EB78919DBE31400D65CC3 /* NOSELCircleDot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOSELCircleDot.m; sourceTree = "<group>"; };
+		643EB78F19DD4AD500D65CC3 /* NOSELCircleDotConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOSELCircleDotConnection.h; sourceTree = "<group>"; };
+		643EB79019DD4AD500D65CC3 /* NOSELCircleDotConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOSELCircleDotConnection.m; sourceTree = "<group>"; };
 		6463BB3519DAD8A50000C235 /* NOCircleSelector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NOCircleSelector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6463BB4E19DAD8A50000C235 /* NOCircleSelectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NOCircleSelectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6463BB5319DAD8A50000C235 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,19 +54,24 @@
 		6463BB6219DAD9600000C235 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Example/main.m; sourceTree = SOURCE_ROOT; };
 		6463BB6419DAD9770000C235 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Example/Resources/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		6463BB6719DAD99B0000C235 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Example/Base.lproj/LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
-		6463BB6919DAD9B50000C235 /* ExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExampleViewController.h; path = Example/Controllers/ExampleViewController.h; sourceTree = SOURCE_ROOT; };
-		6463BB6A19DAD9B50000C235 /* ExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExampleViewController.m; path = Example/Controllers/ExampleViewController.m; sourceTree = SOURCE_ROOT; };
-		6463BB6C19DAD9C10000C235 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Example/AppDelegate.h; sourceTree = SOURCE_ROOT; };
-		6463BB6D19DAD9C10000C235 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Example/AppDelegate.m; sourceTree = SOURCE_ROOT; };
-		6463BB7019DADA620000C235 /* ExampleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExampleView.h; path = Example/Views/ExampleView.h; sourceTree = SOURCE_ROOT; };
-		6463BB7119DADA620000C235 /* ExampleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExampleView.m; path = Example/Views/ExampleView.m; sourceTree = SOURCE_ROOT; };
-		6463BB7419DADBC60000C235 /* NOCircleSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOCircleSelector.h; sourceTree = "<group>"; };
-		6463BB7519DADBC60000C235 /* NOCircleSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOCircleSelector.m; sourceTree = "<group>"; };
+		6463BB6919DAD9B50000C235 /* NOSELExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NOSELExampleViewController.h; path = Example/Controllers/NOSELExampleViewController.h; sourceTree = SOURCE_ROOT; };
+		6463BB6A19DAD9B50000C235 /* NOSELExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NOSELExampleViewController.m; path = Example/Controllers/NOSELExampleViewController.m; sourceTree = SOURCE_ROOT; };
+		6463BB6C19DAD9C10000C235 /* NOSELAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NOSELAppDelegate.h; path = Example/NOSELAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		6463BB6D19DAD9C10000C235 /* NOSELAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NOSELAppDelegate.m; path = Example/NOSELAppDelegate.m; sourceTree = SOURCE_ROOT; };
+		6463BB7019DADA620000C235 /* NOSELExampleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NOSELExampleView.h; path = Example/Views/NOSELExampleView.h; sourceTree = SOURCE_ROOT; };
+		6463BB7119DADA620000C235 /* NOSELExampleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NOSELExampleView.m; path = Example/Views/NOSELExampleView.m; sourceTree = SOURCE_ROOT; };
+		6463BB7419DADBC60000C235 /* NOSELCircleSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOSELCircleSelector.h; sourceTree = "<group>"; };
+		6463BB7519DADBC60000C235 /* NOSELCircleSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOSELCircleSelector.m; sourceTree = "<group>"; };
 		64C3C66219E404FB00BD5AA4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		64C3C66519E4A2B400BD5AA4 /* EasyExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EasyExampleViewController.h; path = Example/Controllers/EasyExampleViewController.h; sourceTree = SOURCE_ROOT; };
-		64C3C66619E4A2B400BD5AA4 /* EasyExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EasyExampleViewController.m; path = Example/Controllers/EasyExampleViewController.m; sourceTree = SOURCE_ROOT; };
-		64C3C66819E4A31F00BD5AA4 /* EasyExampleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EasyExampleView.h; path = Example/Views/EasyExampleView.h; sourceTree = SOURCE_ROOT; };
-		64C3C66919E4A31F00BD5AA4 /* EasyExampleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EasyExampleView.m; path = Example/Views/EasyExampleView.m; sourceTree = SOURCE_ROOT; };
+		64C3C66519E4A2B400BD5AA4 /* NOSELAdvancedExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NOSELAdvancedExampleViewController.h; path = Example/Controllers/NOSELAdvancedExampleViewController.h; sourceTree = SOURCE_ROOT; };
+		64C3C66619E4A2B400BD5AA4 /* NOSELAdvancedExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NOSELAdvancedExampleViewController.m; path = Example/Controllers/NOSELAdvancedExampleViewController.m; sourceTree = SOURCE_ROOT; };
+		64C3C66819E4A31F00BD5AA4 /* NOSELAdvancedExampleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NOSELAdvancedExampleView.h; path = Example/Views/NOSELAdvancedExampleView.h; sourceTree = SOURCE_ROOT; };
+		64C3C66919E4A31F00BD5AA4 /* NOSELAdvancedExampleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NOSELAdvancedExampleView.m; path = Example/Views/NOSELAdvancedExampleView.m; sourceTree = SOURCE_ROOT; };
+		AC3FC309873E46BF9D72DCD9 /* Pods-NOCircleSelectorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NOCircleSelectorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NOCircleSelectorTests/Pods-NOCircleSelectorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AF75139B998A2A9AF3332F74 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE149F4253931CE15894E2BB /* libPods-NOCircleSelectorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NOCircleSelectorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5CB17E1B6D8AF53194BD921 /* Pods-NOCircleSelectorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NOCircleSelectorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NOCircleSelectorTests/Pods-NOCircleSelectorTests.release.xcconfig"; sourceTree = "<group>"; };
+		EF1D719BF997B11C3C9116F3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64C3C66319E404FB00BD5AA4 /* QuartzCore.framework in Frameworks */,
+				91F612FB6AB28DD22CF8B016 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D604751F2654B79E6B46FCBF /* libPods-NOCircleSelectorTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +101,8 @@
 				6463BB3719DAD8A50000C235 /* NOCircleSelector */,
 				6463BB5119DAD8A50000C235 /* NOCircleSelectorTests */,
 				6463BB3619DAD8A50000C235 /* Products */,
+				EFD2E306459871832A14F872 /* Pods */,
+				FC9F144833F4989D926EB0BE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,10 +118,11 @@
 		6463BB3719DAD8A50000C235 /* NOCircleSelector */ = {
 			isa = PBXGroup;
 			children = (
-				6463BB6C19DAD9C10000C235 /* AppDelegate.h */,
-				6463BB6D19DAD9C10000C235 /* AppDelegate.m */,
+				6463BB6C19DAD9C10000C235 /* NOSELAppDelegate.h */,
+				6463BB6D19DAD9C10000C235 /* NOSELAppDelegate.m */,
 				6463BB7319DADB2F0000C235 /* NOCircleSelector */,
-				6463BB5F19DAD8C30000C235 /* Example */,
+				64EB08A81A9B6CD6003BB8D6 /* Easy example */,
+				6463BB5F19DAD8C30000C235 /* Advanced example */,
 				64C3C66419E4175D00BD5AA4 /* Frameworks */,
 				6463BB5E19DAD8B80000C235 /* Resources */,
 				6463BB3819DAD8A50000C235 /* Supporting Files */,
@@ -149,27 +165,23 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		6463BB5F19DAD8C30000C235 /* Example */ = {
+		6463BB5F19DAD8C30000C235 /* Advanced example */ = {
 			isa = PBXGroup;
 			children = (
 				6463BB6F19DADA4A0000C235 /* Views */,
-				6463BB6919DAD9B50000C235 /* ExampleViewController.h */,
-				6463BB6A19DAD9B50000C235 /* ExampleViewController.m */,
-				64C3C66519E4A2B400BD5AA4 /* EasyExampleViewController.h */,
-				64C3C66619E4A2B400BD5AA4 /* EasyExampleViewController.m */,
+				64C3C66519E4A2B400BD5AA4 /* NOSELAdvancedExampleViewController.h */,
+				64C3C66619E4A2B400BD5AA4 /* NOSELAdvancedExampleViewController.m */,
 			);
-			name = Example;
+			name = "Advanced example";
 			sourceTree = "<group>";
 		};
 		6463BB6F19DADA4A0000C235 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6463BB7019DADA620000C235 /* ExampleView.h */,
-				6463BB7119DADA620000C235 /* ExampleView.m */,
-				64C3C66819E4A31F00BD5AA4 /* EasyExampleView.h */,
-				64C3C66919E4A31F00BD5AA4 /* EasyExampleView.m */,
-				641FEF0B19EBC42C00DDDFCF /* ExampleCircleDot.h */,
-				641FEF0C19EBC42C00DDDFCF /* ExampleCircleDot.m */,
+				64C3C66819E4A31F00BD5AA4 /* NOSELAdvancedExampleView.h */,
+				64C3C66919E4A31F00BD5AA4 /* NOSELAdvancedExampleView.m */,
+				641FEF0B19EBC42C00DDDFCF /* NOSELExampleCircleDot.h */,
+				641FEF0C19EBC42C00DDDFCF /* NOSELExampleCircleDot.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -177,12 +189,14 @@
 		6463BB7319DADB2F0000C235 /* NOCircleSelector */ = {
 			isa = PBXGroup;
 			children = (
-				6463BB7419DADBC60000C235 /* NOCircleSelector.h */,
-				6463BB7519DADBC60000C235 /* NOCircleSelector.m */,
-				643EB78819DBE31400D65CC3 /* NOCircleDot.h */,
-				643EB78919DBE31400D65CC3 /* NOCircleDot.m */,
-				643EB78F19DD4AD500D65CC3 /* NOCircleDotConnection.h */,
-				643EB79019DD4AD500D65CC3 /* NOCircleDotConnection.m */,
+				6463BB7419DADBC60000C235 /* NOSELCircleSelector.h */,
+				6463BB7519DADBC60000C235 /* NOSELCircleSelector.m */,
+				643EB78819DBE31400D65CC3 /* NOSELCircleDot.h */,
+				643EB78919DBE31400D65CC3 /* NOSELCircleDot.m */,
+				643EB78F19DD4AD500D65CC3 /* NOSELCircleDotConnection.h */,
+				643EB79019DD4AD500D65CC3 /* NOSELCircleDotConnection.m */,
+				64027E6E1A84F9E100191956 /* NOSELMath.h */,
+				64027E6F1A84F9E100191956 /* NOSELMath.m */,
 			);
 			name = NOCircleSelector;
 			sourceTree = "<group>";
@@ -195,6 +209,45 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		64EB08A81A9B6CD6003BB8D6 /* Easy example */ = {
+			isa = PBXGroup;
+			children = (
+				64EB08A91A9B6CE3003BB8D6 /* Views */,
+				6463BB6919DAD9B50000C235 /* NOSELExampleViewController.h */,
+				6463BB6A19DAD9B50000C235 /* NOSELExampleViewController.m */,
+			);
+			name = "Easy example";
+			sourceTree = "<group>";
+		};
+		64EB08A91A9B6CE3003BB8D6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6463BB7019DADA620000C235 /* NOSELExampleView.h */,
+				6463BB7119DADA620000C235 /* NOSELExampleView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		EFD2E306459871832A14F872 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EF1D719BF997B11C3C9116F3 /* Pods.debug.xcconfig */,
+				083094847B1656A187122AC4 /* Pods.release.xcconfig */,
+				AC3FC309873E46BF9D72DCD9 /* Pods-NOCircleSelectorTests.debug.xcconfig */,
+				D5CB17E1B6D8AF53194BD921 /* Pods-NOCircleSelectorTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FC9F144833F4989D926EB0BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF75139B998A2A9AF3332F74 /* libPods.a */,
+				CE149F4253931CE15894E2BB /* libPods-NOCircleSelectorTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -202,10 +255,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6463BB5819DAD8A50000C235 /* Build configuration list for PBXNativeTarget "NOCircleSelector" */;
 			buildPhases = (
+				7596BB6702111578F9E25C34 /* Check Pods Manifest.lock */,
 				6463BB3119DAD8A50000C235 /* Sources */,
 				6463BB3219DAD8A50000C235 /* Frameworks */,
 				6463BB3319DAD8A50000C235 /* Resources */,
 				OBJCLEANCUSTOMRUNSCRIPTT /* Objective-Clean Run Script */,
+				C6FB2BEC66045F9060E9426A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -220,9 +275,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6463BB5B19DAD8A50000C235 /* Build configuration list for PBXNativeTarget "NOCircleSelectorTests" */;
 			buildPhases = (
+				1045C5A02D75D9B9D2490233 /* Check Pods Manifest.lock */,
 				6463BB4A19DAD8A50000C235 /* Sources */,
 				6463BB4B19DAD8A50000C235 /* Frameworks */,
 				6463BB4C19DAD8A50000C235 /* Resources */,
+				A3D4386BE3EA685510D49ECF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -240,8 +297,9 @@
 		6463BB2D19DAD8A50000C235 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = NOSEL;
 				LastUpgradeCheck = 0600;
-				ORGANIZATIONNAME = PifPaf;
+				ORGANIZATIONNAME = iOskApps;
 				TargetAttributes = {
 					6463BB3419DAD8A50000C235 = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -291,6 +349,66 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1045C5A02D75D9B9D2490233 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7596BB6702111578F9E25C34 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A3D4386BE3EA685510D49ECF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NOCircleSelectorTests/Pods-NOCircleSelectorTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6FB2BEC66045F9060E9426A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		OBJCLEANCUSTOMRUNSCRIPTT /* Objective-Clean Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -312,16 +430,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				643EB78A19DBE31400D65CC3 /* NOCircleDot.m in Sources */,
-				6463BB7619DADBC60000C235 /* NOCircleSelector.m in Sources */,
-				643EB79119DD4AD500D65CC3 /* NOCircleDotConnection.m in Sources */,
-				64C3C66719E4A2B400BD5AA4 /* EasyExampleViewController.m in Sources */,
-				6463BB6E19DAD9C10000C235 /* AppDelegate.m in Sources */,
-				64C3C66A19E4A31F00BD5AA4 /* EasyExampleView.m in Sources */,
-				6463BB6B19DAD9B50000C235 /* ExampleViewController.m in Sources */,
+				643EB78A19DBE31400D65CC3 /* NOSELCircleDot.m in Sources */,
+				6463BB7619DADBC60000C235 /* NOSELCircleSelector.m in Sources */,
+				643EB79119DD4AD500D65CC3 /* NOSELCircleDotConnection.m in Sources */,
+				64C3C66719E4A2B400BD5AA4 /* NOSELAdvancedExampleViewController.m in Sources */,
+				6463BB6E19DAD9C10000C235 /* NOSELAppDelegate.m in Sources */,
+				64C3C66A19E4A31F00BD5AA4 /* NOSELAdvancedExampleView.m in Sources */,
+				6463BB6B19DAD9B50000C235 /* NOSELExampleViewController.m in Sources */,
 				6463BB6319DAD9600000C235 /* main.m in Sources */,
-				641FEF0D19EBC42C00DDDFCF /* ExampleCircleDot.m in Sources */,
-				6463BB7219DADA620000C235 /* ExampleView.m in Sources */,
+				64027E701A84F9E100191956 /* NOSELMath.m in Sources */,
+				641FEF0D19EBC42C00DDDFCF /* NOSELExampleCircleDot.m in Sources */,
+				6463BB7219DADA620000C235 /* NOSELExampleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,28 +554,37 @@
 		};
 		6463BB5919DAD8A50000C235 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF1D719BF997B11C3C9116F3 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = "-Wfloat-equal";
 			};
 			name = Debug;
 		};
 		6463BB5A19DAD8A50000C235 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 083094847B1656A187122AC4 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = "-Wfloat-equal";
 			};
 			name = Release;
 		};
 		6463BB5C19DAD8A50000C235 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC3FC309873E46BF9D72DCD9 /* Pods-NOCircleSelectorTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -476,6 +604,7 @@
 		};
 		6463BB5D19DAD8A50000C235 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5CB17E1B6D8AF53194BD921 /* Pods-NOCircleSelectorTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

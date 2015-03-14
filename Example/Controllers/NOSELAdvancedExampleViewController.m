@@ -1,19 +1,19 @@
 //
-//  EasyExampleViewController.m
+//  NOSELAdvancedExampleViewController.m
 //  NOCircleSelector
 //
 //  Created by Natalia Osiecka on 08.10.2014.
-//  Copyright (c) 2014 PifPaf. All rights reserved.
+//  Copyright (c) 2014 iOskApps. All rights reserved.
 //
 
-#import "EasyExampleViewController.h"
+#import "NOSELAdvancedExampleViewController.h"
 // Views
-#import "EasyExampleView.h"
-#import "ExampleCircleDot.h"
+#import "NOSELAdvancedExampleView.h"
+#import "NOSELExampleCircleDot.h"
 
-@interface EasyExampleViewController () <NOCircleSelectorDelegate>
+@interface NOSELAdvancedExampleViewController () <NOSELCircleSelectorDelegate>
 
-@property (nonatomic, weak, readonly) EasyExampleView *aView;
+@property (nonatomic, weak, readonly) NOSELAdvancedExampleView *aView;
 
 @end
 
@@ -35,10 +35,10 @@ typedef NS_ENUM(NSUInteger, ExampleCircleSelector) {
     ExampleCircleSelectorCount,
 };
 
-@implementation EasyExampleViewController
+@implementation NOSELAdvancedExampleViewController
 
 - (instancetype)init {
-    if (self == [super init]) {
+    if (self = [super init]) {
         self.title = NSLocalizedString(@"Example 2", nil);
         self.tabBarItem.image = [UIImage imageNamed:@"2"];
     }
@@ -50,7 +50,7 @@ typedef NS_ENUM(NSUInteger, ExampleCircleSelector) {
 
 - (void)loadView {
     CGRect rect = [[UIScreen mainScreen] applicationFrame];
-    EasyExampleView *view = [[EasyExampleView alloc] initWithFrame:rect];
+    NOSELAdvancedExampleView *view = [[NOSELAdvancedExampleView alloc] initWithFrame:rect];
     [view setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
     
     // local for easier access
@@ -61,35 +61,36 @@ typedef NS_ENUM(NSUInteger, ExampleCircleSelector) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [_aView.valueLabel setHidden:YES];
+    [self.aView.valueLabel setHidden:YES];
     
-    [_aView.circleSelector setDelegate:self];
-    [_aView.circleSelector setTag:ExampleCircleSelectorBig];
-    [_aView.circleSelector setNumberOfDots:3];
-    [_aView.circleSelector setDotRadius:30.f];
+    [self.aView.circleSelector setDelegate:self];
+    [self.aView.circleSelector setTag:ExampleCircleSelectorBig];
+    [self.aView.circleSelector setAllowsCycling:NO];
+    [self.aView.circleSelector setNumberOfDots:3];
+    [self.aView.circleSelector setDotRadius:30.f];
     
-    [_aView.smallCircleSelector setDelegate:self];
-    [_aView.smallCircleSelector setTag:ExampleCircleSelectorSmall];
-    [_aView.smallCircleSelector setNumberOfDots:4];
-    [_aView.smallCircleSelector setDotRadius:10.f];
+    [self.aView.smallCircleSelector setDelegate:self];
+    [self.aView.smallCircleSelector setTag:ExampleCircleSelectorSmall];
+    [self.aView.smallCircleSelector setNumberOfDots:4];
+    [self.aView.smallCircleSelector setDotRadius:10.f];
     
-    [_aView.mediumCircleSelector setDelegate:self];
-    [_aView.mediumCircleSelector setTag:ExampleCircleSelectorMedium];
-    [_aView.mediumCircleSelector setNumberOfDots:7];
-    [_aView.mediumCircleSelector setDotRadius:15.f];
+    [self.aView.mediumCircleSelector setDelegate:self];
+    [self.aView.mediumCircleSelector setTag:ExampleCircleSelectorMedium];
+    [self.aView.mediumCircleSelector setNumberOfDots:7];
+    [self.aView.mediumCircleSelector setDotRadius:15.f];
 }
 
 #pragma mark - NOCircleSelectorDelegate
 
-- (Class)circleSelectorRequestsNOCircleDotClass:(NOCircleSelector *)circleSelector {
-    return [ExampleCircleDot class];
+- (Class)circleSelectorRequestsNOCircleDotClass:(NOSELCircleSelector *)circleSelector {
+    return [NOSELExampleCircleDot class];
 }
 
-- (void)circleSelector:(NOCircleSelector *)circleSelector changedDots:(NSArray *)dots {
+- (void)circleSelector:(NOSELCircleSelector *)circleSelector changedDots:(NSArray *)dots {
     CGFloat angle = 0.f;
     int counter = 0;
     
-    for (NOCircleDot *dot in dots) {
+    for (NOSELCircleDot *dot in dots) {
         if (counter == 0) {
             [dot setTag:ExampleCircleDotKindStart];
             [dot setUserInteractionEnabled:NO];
@@ -166,8 +167,8 @@ typedef NS_ENUM(NSUInteger, ExampleCircleSelector) {
     }
 }
 
-- (void)circleSelector:(NOCircleSelector *)circleSelector changedDotConnections:(NSArray *)dotConnections {
-    for (NOCircleDotConnection *dotConnection in dotConnections) {
+- (void)circleSelector:(NOSELCircleSelector *)circleSelector changedDotConnections:(NSArray *)dotConnections {
+    for (NOSELCircleDotConnection *dotConnection in dotConnections) {
         [dotConnection setConnectionColor:[UIColor redColor]];
         
         if ((circleSelector.tag == ExampleCircleSelectorBig && [dotConnection dotConnectionBeetweenTag1:ExampleCircleDotKindStart tag2:ExampleCircleDotKindValue]) ||
@@ -182,15 +183,15 @@ typedef NS_ENUM(NSUInteger, ExampleCircleSelector) {
     }
 }
 
-- (void)circleSelector:(NOCircleSelector *)circleSelector updatedDot:(NOCircleDot *)dot {
+- (void)circleSelector:(NOSELCircleSelector *)circleSelector updatedDot:(NOSELCircleDot *)dot {
     if (dot.tag == ExampleCircleDotKindValue || dot.tag == ExampleCircleDotKindValue2) {
         //##OBJCLEAN_SKIP##
         NSString *text = [NSString stringWithFormat:@"%ld", (circleSelector.tag == ExampleCircleSelectorBig)
-                                                        ? (long)[NOCircleDot valueForAngle:dot.angle maxAngle:bigMaxAngle maxValue:500.f minAngle:bigMinAngle minValue:0.f]
-                                                        : (long)[NOCircleDot valueForAngle:dot.angle maxAngle:smallMaxAngle maxValue:10.f minAngle:bigMinAngle minValue:0.f]];
+                                                        ? (long)[NOSELCircleDot valueForAngle:dot.angle maxAngle:bigMaxAngle maxValue:500.f minAngle:bigMinAngle minValue:0.f]
+                                                        : (long)[NOSELCircleDot valueForAngle:dot.angle maxAngle:smallMaxAngle maxValue:10.f minAngle:bigMinAngle minValue:0.f]];
         //##OBJCLEAN_ENDSKIP##
         [dot.textLabel setText:text];
-        [_aView.valueLabel setText:text];
+        [self.aView.valueLabel setText:text];
     } else if (dot.tag == ExampleCircleDotKindEnd) {
         [dot.textLabel setText:[NSString stringWithFormat:@"%d", (circleSelector.tag == ExampleCircleSelectorBig) ? 500 : 10]];
     } else if (dot.tag == ExampleCircleDotKindStart && circleSelector.tag != ExampleCircleSelectorMedium) {
@@ -202,28 +203,28 @@ typedef NS_ENUM(NSUInteger, ExampleCircleSelector) {
     
     if (circleSelector.tag == ExampleCircleSelectorSmall) {
         if (dot.tag == ExampleCircleDotKindValue) { // dot is the lower one
-            NOCircleDot *dot2 = [NOCircleDot dotWithTag:ExampleCircleDotKindValue2 fromDots:_aView.smallCircleSelector.dots];
+            NOSELCircleDot *dot2 = [NOSELCircleDot dotWithTag:ExampleCircleDotKindValue2 fromDots:self.aView.smallCircleSelector.dots];
             dot2.minAngle = dot.angle;
             dot.maxAngle = dot2.angle;
         } else if (dot.tag == ExampleCircleDotKindValue2) { // dot is the higher one
-            NOCircleDot *dot1 = [NOCircleDot dotWithTag:ExampleCircleDotKindValue fromDots:_aView.smallCircleSelector.dots];
+            NOSELCircleDot *dot1 = [NOSELCircleDot dotWithTag:ExampleCircleDotKindValue fromDots:self.aView.smallCircleSelector.dots];
             dot1.maxAngle = dot.angle;
             dot.minAngle = dot1.angle;
         }
     }
 }
 
-- (void)circleSelector:(NOCircleSelector *)circleSelector beganUpdatingDotPosition:(NOCircleDot *)dot {
-    [_aView.valueLabel setHidden:NO];
+- (void)circleSelector:(NOSELCircleSelector *)circleSelector beganUpdatingDotPosition:(NOSELCircleDot *)dot {
+    [self.aView.valueLabel setHidden:NO];
     //##OBJCLEAN_SKIP##
-    [_aView.valueLabel setText:[NSString stringWithFormat:@"%ld", (long)(circleSelector.tag == ExampleCircleSelectorBig
-                                                                         ? [NOCircleDot valueForAngle:dot.angle maxAngle:bigMaxAngle maxValue:500.f minAngle:bigMinAngle minValue:0.f]
-                                                                         : [NOCircleDot valueForAngle:dot.angle maxAngle:smallMaxAngle maxValue:10.f minAngle:bigMinAngle minValue:0.f])]];
+    [self.aView.valueLabel setText:[NSString stringWithFormat:@"%ld", (long)(circleSelector.tag == ExampleCircleSelectorBig
+                                                                         ? [NOSELCircleDot valueForAngle:dot.angle maxAngle:bigMaxAngle maxValue:500.f minAngle:bigMinAngle minValue:0.f]
+                                                                         : [NOSELCircleDot valueForAngle:dot.angle maxAngle:smallMaxAngle maxValue:10.f minAngle:bigMinAngle minValue:0.f])]];
     //##OBJCLEAN_ENDSKIP##
 }
 
-- (void)circleSelector:(NOCircleSelector *)circleSelector endedUpdatingDotPosition:(NOCircleDot *)dot {
-    [_aView.valueLabel setHidden:YES];
+- (void)circleSelector:(NOSELCircleSelector *)circleSelector endedUpdatingDotPosition:(NOSELCircleDot *)dot {
+    [self.aView.valueLabel setHidden:YES];
 }
 
 @end

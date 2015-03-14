@@ -1,15 +1,17 @@
 //
-//  NOCircleDot.m
+//  NOSELCircleDot.m
 //  NOCircleSelector
 //
 //  Created by Natalia Osiecka on 01.10.2014.
-//  Copyright (c) 2014 Natalia Osiecka. All rights reserved.
+//  Copyright (c) 2014 iOskApps. All rights reserved.
 //
 
-#import "NOCircleDot.h"
+#import "NOSELCircleDot.h"
+#import "NOSELMath.h"
 #import <QuartzCore/QuartzCore.h>
+#import <NOCategories/NOCMacros.h>
 
-@implementation NOCircleDot
+@implementation NOSELCircleDot
 
 #pragma mark - Memory management
 
@@ -80,13 +82,13 @@
     [super layoutSubviews];
     
     CGRect frame = self.bounds;
-    [_textLabel setFrame:frame];
+    [self.textLabel setFrame:frame];
     
-    CGRect imageViewFrame = CGRectIntegral(CGRectInset(frame, _lineWidth, _lineWidth));
-    [_imageView setFrame:imageViewFrame];
+    CGRect imageViewFrame = CGRectIntegral(CGRectInset(frame, self.lineWidth, self.lineWidth));
+    [self.imageView setFrame:imageViewFrame];
     
     CGFloat imageViewCornerRadius = (CGRectGetWidth(imageViewFrame) / 2.f);
-    [_imageView.layer setCornerRadius:imageViewCornerRadius];
+    [self.imageView.layer setCornerRadius:imageViewCornerRadius];
 }
 
 - (void)drawRect:(CGRect)rect {
@@ -102,24 +104,27 @@
     CGContextSetFillColorWithColor(context, self.backgroundColor.CGColor);
     CGContextFillRect(context, self.bounds);
     
-    // get variables
-    CGRect circleRect = CGRectInset(self.bounds, _lineWidth, _lineWidth);
-    
-    // draw circle fillColor
-    if (_fillColor != [UIColor clearColor]) {
+    CGRect circleRect = CGRectInset(self.bounds, self.lineWidth, self.lineWidth);
+    [self drawCircleInRect:circleRect usingFillColor:self.fillColor inContext:context];
+    [self drawCircleAroundRect:circleRect usingLineWidth:self.lineWidth lineColor:self.lineColor inContext:context];
+}
+
+- (void)drawCircleInRect:(CGRect)circleRect usingFillColor:(UIColor *)fillColor inContext:(CGContextRef)context {
+    if (fillColor != [UIColor clearColor]) {
         CGContextSaveGState(context);
         CGContextAddEllipseInRect(context, circleRect);
         CGContextClip(context);
-        CGContextSetFillColorWithColor(context, _fillColor.CGColor);
+        CGContextSetFillColorWithColor(context, fillColor.CGColor);
         CGContextFillRect(context, circleRect);
         CGContextRestoreGState(context);
     }
-    
-    // draw the circle around
-    CGContextSetLineWidth(context, _lineWidth);
+}
+
+- (void)drawCircleAroundRect:(CGRect)circleRect usingLineWidth:(CGFloat)lineWidth lineColor:(UIColor *)lineColor inContext:(CGContextRef)context {
+    CGContextSetLineWidth(context, lineWidth);
     CGContextBeginPath(context);
-    CGContextSetStrokeColorWithColor(context, _lineColor.CGColor);
-    CGContextAddArc(context, CGRectGetMidX(circleRect), CGRectGetMidY(circleRect), MIN(CGRectGetWidth(circleRect), CGRectGetHeight(circleRect)) / 2.f, radians(0), radians(360), NO);
+    CGContextSetStrokeColorWithColor(context, lineColor.CGColor);
+    CGContextAddArc(context, CGRectGetMidX(circleRect), CGRectGetMidY(circleRect), MIN(CGRectGetWidth(circleRect), CGRectGetHeight(circleRect)) / 2.f, noc_radians(0), noc_radians(360), NO);
     CGContextStrokePath(context);
 }
 
@@ -133,8 +138,8 @@
     return (value - minValue) * (maxAngle - minAngle) / (maxValue - minValue) + minAngle;
 }
 
-+ (NOCircleDot *)dotWithTag:(NSUInteger)tag fromDots:(NSArray *)dots {
-    for (NOCircleDot *dot in dots) {
++ (NOSELCircleDot *)dotWithTag:(NSUInteger)tag fromDots:(NSArray *)dots {
+    for (NOSELCircleDot *dot in dots) {
         if (dot.tag == tag) {
             return dot;
         }

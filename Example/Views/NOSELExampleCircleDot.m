@@ -1,14 +1,14 @@
 //
-//  ExampleCircleDot.m
+//  NOSELExampleCircleDot.m
 //  NOCircleSelector
 //
 //  Created by Natalia Osiecka on 13.10.2014.
-//  Copyright (c) 2014 PifPaf. All rights reserved.
+//  Copyright (c) 2014 iOskApps. All rights reserved.
 //
 
-#import "ExampleCircleDot.h"
+#import "NOSELExampleCircleDot.h"
 
-@implementation ExampleCircleDot
+@implementation NOSELExampleCircleDot
 
 - (void)commonInit {
     [super commonInit];
