@@ -46,6 +46,7 @@
     [_textLabel setTextAlignment:NSTextAlignmentCenter];
     [self addSubview:_textLabel];
     
+    _shouldDrawConnectionBehind = NO;
     _lineWidth = 1.f;
     _angle = 0.f;
     _minAngle = 0.f;
@@ -146,6 +147,17 @@
     }
     
     return nil;
+}
+
+#pragma mark - Logging
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<%@: %p, %@: %f, %@: %f, %@: %f, %@: %d>",
+            NSStringFromClass([self class]), self,
+            NSStringFromSelector(@selector(angle)), self.angle,
+            NSStringFromSelector(@selector(minAngle)), self.minAngle,
+            NSStringFromSelector(@selector(maxAngle)), self.maxAngle,
+            NSStringFromSelector(@selector(shouldDrawConnectionBehind)), (int)self.shouldDrawConnectionBehind];
 }
 
 @end

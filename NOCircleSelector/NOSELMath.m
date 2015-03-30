@@ -12,7 +12,7 @@
 @implementation NOSELMath
 
 + (CGFloat)normalizeAngle:(CGFloat)angle {
-    CGFloat normalizedAngle = intValue(angle) % 360;
+    CGFloat normalizedAngle = nosel_intValue(angle) % 360;
     if (normalizedAngle < 0) {
         normalizedAngle = 360 + normalizedAngle;
     }

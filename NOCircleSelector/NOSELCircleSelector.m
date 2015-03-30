@@ -179,7 +179,9 @@
     CGContextSetLineWidth(context, self.lineWidth);
     [self fillCircleWithColor:self.fillColor inContext:context circleSelectorRect:self.circleSelectorRect];
     for (NOSELCircleDot *dot in self.dots) {
-        [self clearCircleDot:dot inContext:context];
+        if (!dot.shouldDrawConnectionBehind)  {
+            [self clearCircleDot:dot inContext:context];
+        }
     }
     
     // draw background color
@@ -279,7 +281,7 @@
 
 - (void)placeDot:(NOSELCircleDot *)dot nearPoint:(CGPoint)point {
     CGFloat normalizedAngleInDegrees = [NOSELMath normalizedAngleInDegreesFromCircleSelectorRect:self.circleSelectorRect nearPoint:point];
-    int minAngle = intValue(dot.minAngle), maxAngle = intValue(dot.maxAngle), angle = intValue(dot.angle), newAngle = intValue(normalizedAngleInDegrees);
+    int minAngle = nosel_intValue(dot.minAngle), maxAngle = nosel_intValue(dot.maxAngle), angle = nosel_intValue(dot.angle), newAngle = nosel_intValue(normalizedAngleInDegrees);
     BOOL circleRotated = NO;
     
     // if dot crossed the max/min values, don't move it
@@ -355,6 +357,18 @@
         }
         self.tappedCircleDot = nil;
     }
+}
+
+#pragma mark - Logging
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<%@: %p, %@: %d, %@: %ld, %@: %f, %@: %@, %@: %@>",
+            NSStringFromClass([self class]), self,
+            NSStringFromSelector(@selector(allowsCycling)), self.allowsCycling,
+            NSStringFromSelector(@selector(numberOfDots)), (long)self.numberOfDots,
+            NSStringFromSelector(@selector(dotRadius)), self.dotRadius,
+            NSStringFromSelector(@selector(dots)), self.dots,
+            NSStringFromSelector(@selector(dotConnections)), self.dotConnections];
 }
 
 @end

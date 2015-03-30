@@ -31,4 +31,13 @@
     return (isClockWiseConnection || isOppositeClockConnection);
 }
 
+#pragma mark - Logging
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<%@: %p, %@: %@, %@: %@>",
+            NSStringFromClass([self class]), self,
+            NSStringFromSelector(@selector(startDot)), self.startDot,
+            NSStringFromSelector(@selector(endDot)), self.endDot];
+}
+
 @end

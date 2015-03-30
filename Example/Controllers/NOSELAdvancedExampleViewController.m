@@ -135,6 +135,9 @@ typedef NS_ENUM(NSUInteger, ExampleCircleSelector) {
             switch (counter) {
                 case 0: {
                     [dot setAngle:bigMinAngle];
+                    [dot setShouldDrawConnectionBehind:YES];
+                    [dot setFillColor:[UIColor clearColor]];
+                    [dot setLineColor:[UIColor clearColor]];
                     break;
                 } case 1: {
                     [dot setAngle:45.f];
@@ -198,6 +201,8 @@ typedef NS_ENUM(NSUInteger, ExampleCircleSelector) {
         [dot.textLabel setText:@"0"];
         if (circleSelector.tag == ExampleCircleSelectorSmall) {
             [dot.textLabel setText:NSLocalizedString(@"MIN", nil)];
+        } else if (circleSelector.tag == ExampleCircleSelectorBig) {
+            [dot.textLabel setText:@""];
         }
     }
     

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define intValue(x) (int)noc_floorCGFloat(x)
+#define nosel_intValue(x) (int)noc_floorCGFloat(x)
 
 @interface NOSELMath : NSObject
 

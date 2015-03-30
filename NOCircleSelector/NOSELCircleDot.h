@@ -51,6 +51,11 @@
 @property (nonatomic) CGFloat maxAngle;
 
 /**
+ *  Determines if he connection line should be drawn behind the dot. Default NO.
+ */
+@property (nonatomic) BOOL shouldDrawConnectionBehind;
+
+/**
  *  Convenience method to calculate value for given angle.
  *
  *  @param angle    Angle to translate into another coordinate system.
