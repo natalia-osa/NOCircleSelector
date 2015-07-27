@@ -9,7 +9,7 @@
 #import "NOSELCircleDot.h"
 #import "NOSELMath.h"
 #import <QuartzCore/QuartzCore.h>
-#import <NOCategories/NOCMacros.h>
+#import <NOCategories/NOCCGFloatMath.h>
 
 @implementation NOSELCircleDot
 

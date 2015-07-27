@@ -7,7 +7,7 @@
 //
 
 #import "NOSELMath.h"
-#import <NOCategories/NOCMacros.h>
+#import <NOCategories/NOCCGFloatMath.h>
 
 @implementation NOSELMath
 
