@@ -5,7 +5,7 @@ PODS:
 
 DEPENDENCIES:
   - Expecta (~> 1.0)
-  - NOCategories (~> 0.4)
+  - NOCategories
   - Specta (~> 1.0)
 
 SPEC CHECKSUMS:
