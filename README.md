@@ -167,6 +167,7 @@ Contains 2 examples. The first one (on the left) is simple < 20 lines configurat
 <p align="center" ><img src="https://raw.github.com/natalia-osa/NOCircleSelector/master/ReadmeImages/EasyDemo.png" alt="NOCircleSelector" title="NOCircleSelector" height="568">   <img src="https://raw.github.com/natalia-osa/NOCircleSelector/master/ReadmeImages/CustomizedDemo.png" alt="NOCircleSelector" title="NOCircleSelector" height="568"></p>
 
 ## ChangeLog
+- 1.0.1 Updated code to work with Xcode 7 without warnings. Minimum OS bump from 5.1.1 to 6.0.
 - 1.0 Total code refactor, added prefixes, added NOCategories.
 - 0.4 Added method to get value from angle and rewritten method to get angle from value so it takes upon consideration minimum angle + minimum value.
 - 0.3 Fixed issue with NSInteger valueForDot - now using CGFloat for more precision. Added fast method to swap basic class of NOCircleDot (delegate).
@@ -184,4 +185,4 @@ Available under the Apache 2.0 license. See the LICENSE file for more info.
 
 ## Requirements
 
-Requires Xcode 6, targeting either iOS 5.1.1 or higher.
+Requires Xcode 6, targeting either iOS 6.0 or higher.

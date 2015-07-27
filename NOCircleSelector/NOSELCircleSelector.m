@@ -8,7 +8,7 @@
 
 #import "NOSELCircleSelector.h"
 #import "NOSELMath.h"
-#import <NOCategories/NOCMacros.h>
+#import <NOCategories/NOCCGFloatMath.h>
 
 @interface NOSELCircleSelector ()
 
