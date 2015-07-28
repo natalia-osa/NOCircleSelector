@@ -201,7 +201,7 @@
 - (void)fillCircleWithColor:(UIColor *)fillColor inContext:(CGContextRef)context circleSelectorRect:(CGRect)circleSelectorRect {
     if (fillColor != [UIColor clearColor]) {
         CGContextSaveGState(context);
-        CGContextAddEllipseInRect(context, circleSelectorRect);
+        CGContextAddEllipseInRect(context, CGRectInset(circleSelectorRect, self.lineWidth / 2.f, self.lineWidth / 2.f));
         CGContextClip(context);
         CGContextSetFillColorWithColor(context, fillColor.CGColor);
         CGContextFillRect(context, circleSelectorRect);
@@ -215,8 +215,6 @@
     CGContextSetStrokeColorWithColor(context, dotConnection.connectionColor.CGColor);
     CGFloat smallerAngle = [NOSELMath normalizeAngle:dotConnection.startDot.angle - 90];
     CGFloat biggerAngle = [NOSELMath normalizeAngle:dotConnection.endDot.angle - 90];
-//    CGFloat smallerAngle = [NOSELMath normalizeAngle:MIN(dotConnection.startDot.angle, dotConnection.endDot.angle) - 90];
-//    CGFloat biggerAngle = [NOSELMath normalizeAngle:MAX(dotConnection.startDot.angle, dotConnection.endDot.angle) - 90];
     CGContextAddArc(context, CGRectGetMidX(circleSelectorRect), CGRectGetMidY(circleSelectorRect), noc_floorCGFloat(CGRectGetWidth(circleSelectorRect) / 2.f), noc_radians(smallerAngle), noc_radians(biggerAngle), NO);
     CGContextStrokePath(context);
 }

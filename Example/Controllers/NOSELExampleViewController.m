@@ -43,17 +43,25 @@
     [super viewDidLoad];
     
     [self.aView.circleSelector setDelegate:self];
-    [self.aView.circleSelector setNumberOfDots:3];
     [self.aView.circleSelector setDotRadius:30.f];
+    [self.aView.circleSelector setFillColor:[UIColor colorWithRed:1.f green:1.f blue:0.f alpha:0.4f]];
+    [self.aView.circleSelector setLineWidth:5.f];
+    [self.aView.circleSelector setLineColor:[UIColor redColor]];
+    [self.aView.circleSelector setNumberOfDots:3];
     
     [self.aView.smallCircleSelector setDelegate:self];
-    [self.aView.smallCircleSelector setNumberOfDots:4];
     [self.aView.smallCircleSelector setDotRadius:15.f];
+    [self.aView.smallCircleSelector setFillColor:[UIColor colorWithRed:1.f green:0.f blue:0.f alpha:0.4f]];
+    [self.aView.smallCircleSelector setLineWidth:4.f];
+    [self.aView.smallCircleSelector setLineColor:[UIColor redColor]];
+    [self.aView.smallCircleSelector setNumberOfDots:4];
 }
 
 - (void)circleSelector:(NOSELCircleSelector *)circleSelector changedDots:(NSArray *)dots {
     CGFloat angle = 0.f;
     for (NOSELCircleDot *dot in dots) {
+        [dot setLineColor:[UIColor redColor]];
+        [dot setLineWidth:10.f];
         [dot setAngle:angle];
         angle += 90.f;
     }

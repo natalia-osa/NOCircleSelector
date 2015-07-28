@@ -105,9 +105,8 @@
     CGContextSetFillColorWithColor(context, self.backgroundColor.CGColor);
     CGContextFillRect(context, self.bounds);
     
-    CGRect circleRect = CGRectInset(self.bounds, self.lineWidth, self.lineWidth);
-    [self drawCircleInRect:circleRect usingFillColor:self.fillColor inContext:context];
-    [self drawCircleAroundRect:circleRect usingLineWidth:self.lineWidth lineColor:self.lineColor inContext:context];
+    [self drawCircleInRect:CGRectInset(self.bounds, self.lineWidth, self.lineWidth) usingFillColor:self.fillColor inContext:context];
+    [self drawCircleAroundRect:self.bounds usingLineWidth:self.lineWidth lineColor:self.lineColor inContext:context];
 }
 
 - (void)drawCircleInRect:(CGRect)circleRect usingFillColor:(UIColor *)fillColor inContext:(CGContextRef)context {
@@ -125,7 +124,7 @@
     CGContextSetLineWidth(context, lineWidth);
     CGContextBeginPath(context);
     CGContextSetStrokeColorWithColor(context, lineColor.CGColor);
-    CGContextAddArc(context, CGRectGetMidX(circleRect), CGRectGetMidY(circleRect), MIN(CGRectGetWidth(circleRect), CGRectGetHeight(circleRect)) / 2.f, noc_radians(0), noc_radians(360), NO);
+    CGContextAddArc(context, CGRectGetMidX(circleRect), CGRectGetMidY(circleRect), MIN(CGRectGetWidth(circleRect), CGRectGetHeight(circleRect)) / 2.f - lineWidth / 2.f, noc_radians(0), noc_radians(360), NO);
     CGContextStrokePath(context);
 }
 
