@@ -172,7 +172,7 @@ Contains 2 examples. The first one (on the left) is simple < 20 lines configurat
 <p align="center" ><img src="https://raw.github.com/natalia-osa/NOCircleSelector/master/ReadmeImages/EasyDemo.png" alt="NOCircleSelector" title="NOCircleSelector" height="568">   <img src="https://raw.github.com/natalia-osa/NOCircleSelector/master/ReadmeImages/CustomizedDemo.png" alt="NOCircleSelector" title="NOCircleSelector" height="568"></p>
 
 ## ChangeLog
-- 1.0.3 Added option to draw shadow behind dotConnections
+- 1.0.4 Added option to draw shadow behind dotConnections
 - 1.0.2 Updated code to work with Xcode 7 without warnings. Minimum OS bump from 5.1.1 to 6.0.
 - 1.0 Total code refactor, added prefixes, added NOCategories.
 - 0.4 Added method to get value from angle and rewritten method to get angle from value so it takes upon consideration minimum angle + minimum value.

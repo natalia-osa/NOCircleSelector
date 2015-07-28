@@ -178,13 +178,14 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextClearRect(context, self.bounds);
     
+    CGContextSetLineWidth(context, self.lineWidth);
+    [self fillCircleWithColor:self.fillColor inContext:context circleSelectorRect:self.circleSelectorRect];
+    
     // draw the circle using personalized connections
     for (NOSELCircleDotConnection *dotConnection in self.dotConnections) {
         [self drawCircleConnection:dotConnection inContext:context circleSelectorRect:self.circleSelectorRect];
     }
     
-    CGContextSetLineWidth(context, self.lineWidth);
-    [self fillCircleWithColor:self.fillColor inContext:context circleSelectorRect:self.circleSelectorRect];
     for (NOSELCircleDot *dot in self.dots) {
         if (!dot.shouldDrawConnectionBehind)  {
             [self clearCircleDot:dot inContext:context];
