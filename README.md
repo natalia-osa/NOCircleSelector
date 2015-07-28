@@ -35,6 +35,11 @@ The recommended method to differ the dot is to use NS_ENUM and set tags of these
 ```objective-c
 [_circleSelector setFillColor:[UIColor blueColor]];
 ```
+- shadow
+```objective-c
+[_circleSelector setShadowWidth:5];
+[_circleSelector setShadowColor:[UIColor blueColor]];
+```
 
 #### In NOSELCircleDot (+ all UIView properties like backgroundColor etc):
 - lineWidth
@@ -167,7 +172,8 @@ Contains 2 examples. The first one (on the left) is simple < 20 lines configurat
 <p align="center" ><img src="https://raw.github.com/natalia-osa/NOCircleSelector/master/ReadmeImages/EasyDemo.png" alt="NOCircleSelector" title="NOCircleSelector" height="568">   <img src="https://raw.github.com/natalia-osa/NOCircleSelector/master/ReadmeImages/CustomizedDemo.png" alt="NOCircleSelector" title="NOCircleSelector" height="568"></p>
 
 ## ChangeLog
-- 1.0.1 Updated code to work with Xcode 7 without warnings. Minimum OS bump from 5.1.1 to 6.0.
+- 1.0.3 Added option to draw shadow behind dotConnections
+- 1.0.2 Updated code to work with Xcode 7 without warnings. Minimum OS bump from 5.1.1 to 6.0.
 - 1.0 Total code refactor, added prefixes, added NOCategories.
 - 0.4 Added method to get value from angle and rewritten method to get angle from value so it takes upon consideration minimum angle + minimum value.
 - 0.3 Fixed issue with NSInteger valueForDot - now using CGFloat for more precision. Added fast method to swap basic class of NOCircleDot (delegate).

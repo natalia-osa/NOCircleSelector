@@ -119,6 +119,16 @@
 @property (nonatomic) BOOL allowsCycling;
 
 /**
+ *  If more than 0, shadow on the circle is drawn. Default 0.
+ */
+@property (nonatomic) NSUInteger shadowWidth;
+
+/**
+ *  You need to set shadowWidth to > 0 to see the shadow. Color of the shadow. Default blackColor.
+ */
+@property (nonatomic) UIColor *shadowColor;
+
+/**
  *  Public common initializer. Override and don't forget to call super.
  */
 - (void)commonInit;

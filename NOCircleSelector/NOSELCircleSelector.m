@@ -47,8 +47,10 @@
     _numberOfDots = 0;
     _lineWidth = 1.f;
     _dotRadius = 10.f;
+    _shadowWidth = 0;
     _lineColor = [UIColor redColor];
     _fillColor = [UIColor clearColor];
+    _shadowColor = [UIColor blackColor];
 }
 
 #pragma mark - Setters / Getters
@@ -146,6 +148,11 @@
     [self setNeedsDisplay];
 }
 
+- (void)setShadowColor:(UIColor *)shadowColor {
+    _shadowColor = shadowColor;
+    [self setNeedsDisplay];
+}
+
 #pragma mark - Drawing code
 
 - (void)layoutSubviews {
@@ -216,6 +223,11 @@
     CGFloat smallerAngle = [NOSELMath normalizeAngle:dotConnection.startDot.angle - 90];
     CGFloat biggerAngle = [NOSELMath normalizeAngle:dotConnection.endDot.angle - 90];
     CGContextAddArc(context, CGRectGetMidX(circleSelectorRect), CGRectGetMidY(circleSelectorRect), noc_floorCGFloat(CGRectGetWidth(circleSelectorRect) / 2.f), noc_radians(smallerAngle), noc_radians(biggerAngle), NO);
+    
+    // add shadow
+    CGContextSetShadowWithColor(context, CGSizeMake(0.f, 0.f), self.shadowWidth, self.shadowColor.CGColor);
+    
+    // draw everything
     CGContextStrokePath(context);
 }
 
