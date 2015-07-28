@@ -213,8 +213,10 @@
     CGContextSetLineWidth(context, dotConnection.lineWidth);
     CGContextBeginPath(context);
     CGContextSetStrokeColorWithColor(context, dotConnection.connectionColor.CGColor);
-    CGFloat smallerAngle = [NOSELMath normalizeAngle:MIN(dotConnection.startDot.angle, dotConnection.endDot.angle) - 90];
-    CGFloat biggerAngle = [NOSELMath normalizeAngle:MAX(dotConnection.startDot.angle, dotConnection.endDot.angle) - 90];
+    CGFloat smallerAngle = [NOSELMath normalizeAngle:dotConnection.startDot.angle - 90];
+    CGFloat biggerAngle = [NOSELMath normalizeAngle:dotConnection.endDot.angle - 90];
+//    CGFloat smallerAngle = [NOSELMath normalizeAngle:MIN(dotConnection.startDot.angle, dotConnection.endDot.angle) - 90];
+//    CGFloat biggerAngle = [NOSELMath normalizeAngle:MAX(dotConnection.startDot.angle, dotConnection.endDot.angle) - 90];
     CGContextAddArc(context, CGRectGetMidX(circleSelectorRect), CGRectGetMidY(circleSelectorRect), noc_floorCGFloat(CGRectGetWidth(circleSelectorRect) / 2.f), noc_radians(smallerAngle), noc_radians(biggerAngle), NO);
     CGContextStrokePath(context);
 }

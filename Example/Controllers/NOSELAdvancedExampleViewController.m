@@ -175,7 +175,8 @@ typedef NS_ENUM(NSUInteger, ExampleCircleSelector) {
         [dotConnection setConnectionColor:[UIColor redColor]];
         
         if ((circleSelector.tag == ExampleCircleSelectorBig && [dotConnection dotConnectionBeetweenTag1:ExampleCircleDotKindStart tag2:ExampleCircleDotKindValue]) ||
-            (circleSelector.tag == ExampleCircleSelectorSmall && [dotConnection dotConnectionBeetweenTag1:ExampleCircleDotKindValue tag2:ExampleCircleDotKindValue2])) {
+            (circleSelector.tag == ExampleCircleSelectorSmall && [dotConnection dotConnectionBeetweenTag1:ExampleCircleDotKindValue tag2:ExampleCircleDotKindValue2]) ||
+            (circleSelector.tag == ExampleCircleSelectorMedium && [dotConnection dotConnectionBeetweenTag1:ExampleCircleDotKindValue tag2:ExampleCircleDotKindStart]) ) {
             [dotConnection setLineWidth:5.f];
             if (circleSelector.tag == ExampleCircleSelectorSmall) {
                 [dotConnection setConnectionColor:[UIColor whiteColor]];
